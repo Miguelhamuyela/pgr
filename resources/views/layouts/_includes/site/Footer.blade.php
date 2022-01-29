@@ -44,11 +44,11 @@
                              <ul>
                                  <li>
                                      <a target="_blank"
-                                         href="https://www.facebook.com/Procuradoria-Geral-da-Rep%C3%BAblica-102762631302067/?ref=py_c"><i
+                                         href="{{ $configuration->facebook }}"><i
                                              class="fa fa-facebook"></i></a>
                                  </li>
                                  <li>
-                                     <a target="_blank" href="https://twitter.com/pgrangola"><i
+                                     <a target="_blank" href="{{ $configuration->twitter }}"><i
                                              class="fa fa-twitter"></i></a>
                                  </li>
                              </ul>
