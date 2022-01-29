@@ -70,10 +70,9 @@
                     <!-- Novo Menu -->
                     <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu3`);">Combate a Corrupção</a>
                         <ul class="menu3">
-                            <li><a href="dnpccpage">DNPCC</a></li>
-                            <li><a href="dniappage">DNIAP</a></li>
-                            <li><a href="senrapage">SENRA</a></li>
-                            <!--<li><a href="pgrsicpage">PGR-SIC</a></li>-->
+                            <li><a href="{{ route('site.dnpcc')}}">DNPCC</a></li>
+                            <li><a href="{{ route('site.dniap')}}">DNIAP</a></li>
+                            <li><a href="{{ route('site.senra')}}">SENRA</a></li>
                         </ul>
                     </li>
                     <!-- Fim do Novo Menu -->
