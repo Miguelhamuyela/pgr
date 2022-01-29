@@ -1,167 +1,105 @@
-   <!-- ====== Header Start ====== -->
-   <header class="ud-header bg-white">
-       <div class="container">
-           <div class="row">
-               <div class="col-lg-12">
-                   <nav class="navbar navbar-expand-lg">
-                       <a class="navbar-brand" href="{{ route('site.home') }}">
-                           <img src="/images/logotipo/logo.png" alt="Logo" />
-                       </a>
-                       <button class="navbar-toggler">
-                           <span class="toggler-icon bg-dark"> </span>
-                           <span class="toggler-icon bg-dark"> </span>
-                           <span class="toggler-icon bg-dark"> </span>
-                       </button>
-
-                       <div class="navbar-collapse">
-                           <ul id="nav" class="navbar-nav mx-auto">
-                               <li class="nav-item nav-item-has-children">
-                                   <a href="javascript:void(0)" class="text-dark">CNE</a>
-                                   <ul class="ud-submenu">
-                                       <li class="ud-submenu-item">
-                                           <a href="{{ route('site.definition') }}" class="ud-submenu-link text-dark">
-                                               Definição
-                                           </a>
-                                       </li>
-                                       <li class="ud-submenu-item">
-                                           <a href="{{ url('/estrutura-organica') }}"
-                                               class="ud-submenu-link text-dark">
-                                               Estrutura Orgânica
-                                           </a>
-                                       </li>
-                                       <li class="nav-item nav-item-has-children">
-                                           <a href="javascript:void(0)" class="text-dark">Comissão Actual</a>
-                                           <ul class="ud-submenu">
-                                               <li class="ud-submenu-item">
-                                                   <a href="{{ route('site.president') }}"
-                                                       class="ud-submenu-link text-dark">
-                                                       Presidente
-                                                   </a>
-                                               </li>
-
-                                               <li class="ud-submenu-item">
-                                                   <a href="{{ route('site.mandate') }}"
-                                                       class="ud-submenu-link text-dark">
-                                                       Mandato
-                                                   </a>
-                                               </li>
-
-                                               <li class="ud-submenu-item">
-                                                   <a href="{{ route('site.compostion') }}"
-                                                       class="ud-submenu-link text-dark">
-                                                       Composição
-                                                   </a>
-                                               </li>
-
-                                           </ul>
-                                       </li>
-                                       <li class="ud-submenu-item">
-                                           <a href="{{ route('site.regulation') }}" class="ud-submenu-link text-dark">
-                                               Regulamentos
-                                           </a>
-                                       </li>
-                                       <li class="ud-submenu-item">
-                                           <a href="{{ route('site.diretive') }}" class="ud-submenu-link text-dark">
-                                               Directivas
-                                           </a>
-                                       </li>
-                                       <li class="ud-submenu-item">
-                                           <a href="{{ route('site.instructive') }}"
-                                               class="ud-submenu-link text-dark">
-                                               Instrutivos
-                                           </a>
-                                       </li>
-                                       <li class="ud-submenu-item">
-                                           <a href="{{ route('site.deliberation') }}"
-                                               class="ud-submenu-link text-dark">Deliberações</a>
-                                       </li>
-                                   </ul>
-                               </li>
-                               <li class="nav-item">
-                                   <a class="ud-menu-link text-dark"
-                                       href="{{ route('site.legislation') }}">Legislação</a>
-                               </li>
-                               <li class="nav-item nav-item-has-children">
-                                   <a href="javascript:void(0)" class="text-dark">Eleições</a>
-                                   <ul class="ud-submenu">
-                                       @if ($elections)
-                                           @foreach ($elections as $item)
-                                               <li class="ud-submenu-item">
-                                                   <a href="{{ url("/eleições/{$item->date}") }}"
-                                                       class="ud-submenu-link text-dark">
-                                                       {{ $item->date }}
-                                                   </a>
-                                               </li>
-                                           @endforeach
-                                       @endif
-                                   </ul>
+<div
+    style=" background-color: white; position: fixed; top: 0; border-bottom: 1px solid black; right: 0;left: 0; z-index: 1030;">
+    <!-- ======= Header1 ======= -->
+    <div class="container st" style="padding-right: 0px !important; padding-left: 0px !important; flex-wrap: wrap;">
+        <header class="header">
+            <div class="container d-flex logo"
+                style="width: 70%; display: flex; justify-content: center; align-items: center;">
+                <div class="logo mr-auto">
+                    <a class="navbar-brand text-light" href="index">
+                        <div class="logo-composition">
+                            <img style="padding: 10px; padding-left: 0px; margin-top:20px; width: 280px !important;"
+                                src="/site/img/log_pgr.png" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
 
 
 
-                               </li>
-                               <li class="nav-item">
-                                   <a class="ud-menu-link text-dark" href="{{ route('site.parties') }}">Partidos</a>
-                               </li>
-                               <li class="nav-item nav-item-has-children">
-                                   <a href="javascript:void(0)" class="text-dark">Publicações</a>
-                                   <ul class="ud-submenu">
-                                       <li class="ud-submenu-item">
-                                           <a href="{{ route('site.announcent') }}"
-                                               class="ud-submenu-link text-dark">
-                                               Anúncios
-                                           </a>
-                                       </li>
-                                       <li class="ud-submenu-item">
-                                           <a href="{{ url('/Publicações') }}" class="ud-submenu-link text-dark">
-                                               Publicações
-                                           </a>
-                                       </li>
-                                       <li class="nav-item nav-item-has-children">
-                                           <a href="javascript:void(0)" class="text-dark"><i
-                                                   class="lni lni-arrow-right"></i>Media</a>
-                                           <ul class="ud-submenu">
-                                               <li class="ud-submenu-item">
-                                                   <a href="{{ route('site.audio') }}"
-                                                       class="ud-submenu-link text-dark">
-                                                       Áudios
-                                                   </a>
-                                               </li>
-                                               <li class="ud-submenu-item">
-                                                   <a href="{{ route('site.gallery') }}"
-                                                       class="ud-submenu-link text-dark">
-                                                       Galeria de Imagens
-                                                   </a>
-                                               </li>
-                                               <li class="ud-submenu-item">
-                                                   <a href="{{ route('site.videos') }}"
-                                                       class="ud-submenu-link text-dark">
-                                                       Vídeos
-                                                   </a>
-                                               </li>
+            <div class="inp" style="width: 40%; display: flex; justify-content: center; align-items: center;">
+                <form action="pesquisar_noticias" method="post">
+                    <div class="input-group">
 
-                                           </ul>
-                                       </li>
+                        <input id="pesquisar_noticias" type="text" name="pesquisar_noticias" class="form-control"
+                            placeholder="Pesquisar">
+                        <div class="input-group-append">
 
-                                   </ul>
-                               </li>
-                               <li class="nav-item">
-                                   <a class="ud-menu-link text-dark" href="{{ route('site.news') }}">Notícias</a>
-                               </li>
-                               <li class="nav-item">
-                                   <a class="ud-menu-link text-dark" href="{{ url('/contactos') }}">Contactos</a>
-                               </li>
-                               <li class="nav-item">
-                                   <a class=" text-dark" href="{{ route('site.search') }}">
-                                       <i class="lni lni-search"></i>
-                                   </a>
-                               </li>
-                           </ul>
-                       </div>
+                            <button id="search-btn" class="btn btn-secondary" type="submit"
+                                style="background-color: #800000;">
+                                <i class="fa fa-search"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </header>
+    </div>
+    <!-- End Header1 -->
+
+    <!-- ======= Header2 ======= -->
+    <header id="header">
+        <div class="container d-flex" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+
+            <nav class="nav-menu d-none d-lg-block"
+                style="display: flex; justify-content: center; align-items: center;">
+                <ul>
+
+                    <li><a href="{{ route('site.home') }}">Início</a></li>
+                    <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu1`);">Institucional</a>
+                        <ul class="menu1">
+                            <li><a href="sobrepage">Sobre a PGR</a></li>
+                            <li><a href="membrospage">Quem é Quem</a></li>
+                            <!-- Novo Submenu
+                                <li><a href="javascript:void(0);">Órgãos PGR</a></li>
+                                Fim do Novo Submenu -->
+
+                        </ul>
+                    </li>
+
+                    <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu2`);">Para o Cidadão</a>
+                        <ul class="menu2">
+                            <li><a href="denunciaspage">Denúncias</a></li>
+
+                            <li><a href="reclamacoespage">Reclamações</a></li>
+                        </ul>
+                    </li>
+                    <!-- Novo Menu -->
+                    <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu3`);">Combate a Corrupção</a>
+                        <ul class="menu3">
+                            <li><a href="dnpccpage">DNPCC</a></li>
+                            <li><a href="dniappage">DNIAP</a></li>
+                            <li><a href="senrapage">SENRA</a></li>
+                            <!--<li><a href="pgrsicpage">PGR-SIC</a></li>-->
+                        </ul>
+                    </li>
+                    <!-- Fim do Novo Menu -->
+
+                    <li><a href="noticiaspage">Notícias</a></li>
 
 
-                   </nav>
-               </div>
-           </div>
-       </div>
-   </header>
-   <!-- ====== Header End ====== -->
+                    <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu4`);">Documentos</a>
+                        <ul class="menu2">
+                            <li><a href="legislacoespage">Legislações</a></li>
+
+                            <li><a href="comunicados">Comunicados</a></li>
+                            <li><a href="publicacoes">Publicações</a></li>
+                            <li><a href="r_anuais">Relatórios Anuais</a></li>
+                            <li><a href="outros_doc">Outros Documentos</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contactpage">Contactos</a></li>
+                    <li><a href="https://webmail.pgr.ao/" target="_blank"><i class="fa fa-envelope"
+                                aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+
+        </div>
+    </header>
+    <!-- End Header2 -->
+</div>

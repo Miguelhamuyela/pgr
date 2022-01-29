@@ -1,349 +1,448 @@
 @extends('layouts.merge.site')
 @section('titulo', 'Oficial')
 @section('content')
-
-
-    <!-- ====== Slideshow Start ====== -->
-    <div class="carousel">
+    <main id="main">
+        <!-- ======= Slider Section ======= -->
         @if ($slideshows)
-            @foreach ($slideshows as $item)
-                <div
-                    style='
-                            background-position:center;
-                            background-size:cover;
-                            height:850px;
-                            width:100%;
-                            background-image: url("/storage/{{ $item->path }}"); box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);'>
-                    <div class="ud-hero-content" style="margin-top: 290px;">
-                        @if ($item->title)
-                            <h2 class="ud-hero-title" style="text-shadow: 1px 1px #000; font-size:35px;">
-                                {{ $item->title }}
-                            </h2>
-                        @endif
-                        @if ($item->link)
-                            <ul class="ud-hero-buttons">
-                                <a href="{{ $item->link }}" class="ud-main-btn ud-link-btn">
-                                    {{ $item->button }} <i class="lni lni-arrow-right"></i>
-                                </a>
-                            </ul>
-                        @endif
+            <div id="home" class="slider-area">
+                <div class="bend niceties preview-2">
+                    <div id="ensign-nivoslider" class="slides">
+                        @foreach ($slideshows as $item)
+                            <img class="banner" src="/storage/{{ $item->path }}" style="max-height:40px!important"
+                                alt="" title="#slider-direction-{{ $item->id }}" />
+
+                        @endforeach
+
                     </div>
                 </div>
-
-            @endforeach
+            </div>
         @endif
-    </div>
-    <!-- ====== Slideshow End ====== -->
+        <!-- End Slider -->
 
-    <!-- ====== NEWS Start ====== -->
-    <section id="NEWS" class="ud-features" style="margin-top:-115px;margin-bottom:-50px;">
-        <div class="container">
 
-            <div class="row">
-                @foreach ($news as $item)
-                    <div class="col-lg-3 col-md-6">
-                        <div class="ud-single-blog">
-                            <div class="ud-blog-image">
-                                <a href="{!! url('/noticia/' . urlencode($item->title)) !!}">
-                                    <div class="card-img-top img-fluid rounded"
-                                        style='background-image:url("/storage/{{ $item->path }}");background-position:center;background-size:cover;height:200px;'>
-                                    </div>
-                                </a>
-                            </div>
 
-                            <div class="ud-blog-content" style="margin-top:-20px;">
-                                <span class="ud-blog-date bg-primary">{{ date('M d, Y', strtotime($item->date)) }}</span>
-                                <br>
-                                <a href="{!! url('/noticia/' . urlencode($item->title)) !!}">
-                                    <h5 class="text-dark">
-                                        {{ $item->title }}
-
-                                    </h5>
-                                </a>
-                            </div>
+        <!-- ======= About Section ======= -->
+        <div id="about" class="about-area area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10 col-xs-10" style="margin: 0 auto !important;">
+                        <div class="section-headline text-center">
+                            <h2>Boas Vindas</h2>
                         </div>
                     </div>
-                @endforeach
-                <center>
-
-                    <a href="{{ route('site.news') }}" class="ud-main-btn ud-link-btn mb-5">
-                        Ver mais <i class="lni lni-arrow-right"></i>
-                    </a>
-                </center>
-
-            </div>
-        </div>
-    </section>
-    <!-- ====== NEWS End ====== -->
-
-    <!-- ====== Eleitory Start ====== -->
-    <section id="Eleitory" class="py-4 px-5" style="margin-top: -80px; background-color: #3C9EE0">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <h3 class="text-center text-white">Processos Eleitorais em Angola</h3>
-
                 </div>
-            </div>
-            <div class="row mt-4">
-                {{-- item --}}
-                <div class="col-xl-3 col-lg-3 col-sm-6">
-                    <a href="{{ url('/eleições/2017') }}">
-                        <img src="/site/images/eleitory/index-3.png" alt="eleições 2017">
-                    </a>
-                </div>
-                {{-- end item --}}
-                {{-- item --}}
-                <div class="col-xl-3 col-lg-3 col-sm-6">
-                    <a href="{{ url('/eleições/2012') }}">
-                        <img src="/site/images/eleitory/index-2.png" alt="eleições 2012">
-                    </a>
-                </div>
-                {{-- end item --}}
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 0 auto !important;">
+                        <div class="row">
 
-                {{-- item --}}
-                <div class="col-xl-3 col-lg-3 col-sm-6">
-                    <a href="{{ url('/eleições/2008') }}">
-                        <img src="/site/images/eleitory/index-1.png" alt="eleições 2008">
-                    </a>
-                </div>
-                {{-- end item --}}
-
-
-                {{-- item --}}
-                <div class="col-xl-3 col-lg-3 col-sm-6">
-                    <a href="{{ url('/eleições/1992') }}">
-                        <img src="/site/images/eleitory/index-0.png" alt="eleições 1992">
-                    </a>
-                </div>
-                {{-- end item --}}
-            </div>
-        </div>
-    </section>
-    <!-- ====== Eleitory End ====== -->
-
-    <!-- ====== IMPRESSOS Start ====== -->
-    <section id="Publicações" class="ud-features">
-        <div class="container">
-
-            <div class="col-lg-12" style="margin-bottom:-50px;">
-
-                <div class="ud-section-title">
-                    <h2 style="font-size:40px;">Publicações</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-sm-6">
-
-                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
-
-                        <a target="_blank" href="/pdf/eleitory/Registo-Eleitoral.pdf" class="card-img-top img-fluid rounded"
-                            style='background-image:url("/site/images/eleitory/registo_eleitoral-o-que-e-1536x905.jpg");background-position:center;background-size:cover;height:300px;'
-                            data-bs-toggle="modal" data-bs-target="#myModal">
-                        </a>
-
-                        <div class="ud-feature-content">
-
-                            <a href="/pdf/eleitory/Registo-Eleitoral.pdf">
-                                <h3 class="ud-feature-title">O que é o registo eleitoral?</h3>
-                            </a>
-
-                            <div class="modal" id="myModal">
-                                <div class="modal-dialog modal-xl  modal-fullscreen-md-down">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-primary ">
-                                            <h5 class="modal-title text-white">Registo Eleitoral</h5>
-                                            <button type="button" class="btn-close bg-white"
-                                                data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div style="height:450px;width:100%;">
-                                                <embed src="/pdf/eleitory/Registo-Eleitoral.pdf" type="application/pdf"
-                                                    height="100%" width="100%">
-                                            </div>
-
+                            <!-- single-well end-->
+                            <div>
+                                <div>
+                                    <div class="text">
+                                        <div
+                                            style="-webkit-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);-moz-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);">
+                                            <img class="img"
+                                                style="border-radius: 2px;width:50%;float: left; margin: 0px 30px 0px 0px"
+                                                src="/site/img/blog/2.jpg" alt="">
                                         </div>
 
+                                        <p style="text-align: justify; ">
+                                            Em Democracia, as instituições públicas exercem as suas funções norteadas pela
+                                            prossecução do interesse público, pela transparência e pela prestação de contas
+                                            à
+                                            sociedade do cumprimento das suas atribuições constitucionais e legais, na
+                                            medida em
+                                            que é em nome e em prol dos cidadãos que se estruturam e organizam os poderes
+                                            públicos. <br><br>
+                                            A Procuradoria-Geral da República, o fiscal mor da legalidade democrática,
+                                            obriga-se à
+                                            criação de canais de comunicação e de interacção com os cidadãos, de modo a
+                                            permitir
+                                            o escrutínio da sua acção e a obter dos destinatários finais do seu papel social
+                                            o retorno
+                                            necessário ao aprimoramento e melhoria dos seus procedimentos. <br><br>
+                                            Nesta era digital, a inauguração do presente portal da Procuradoria-Geral da
+                                            República
+                                            visa impulsionar e dinamizar o fornecimento de informações sobre o funcionamento
+                                            desta Instituição, a sua composição em matéria de magistrados do Ministério
+                                            Público,
+                                            técnicos de justiça e outros servidores, bem como a divulgação de toda a
+                                            actividade
+                                            quotidiana com valor noticioso ou de interesse público. <br><br>
+                                            Um recurso extremamente útil e de reforço ao exercício da cidadania é o espaço
+                                            para a
+                                            apresentação de denúncias públicas, cuja confidencialidade a anonimização dos
+                                            denunciantes é garantida pelo sistema informático e por técnicos especializados
+                                            da
+                                            Procuradoria-Geral da República, permitindo ainda que o interessado faça o
+                                            acompanhamento do tratamento dado à sua denúncia por via do portal. <br><br>
+                                            Eis mais um passo no sentido da promoção do exercício da cidadania plena e na
+                                            optimização das iniciativas comunicacionais da Procuradoria-Geral da República.
+                                            <br><br><br>
+                                            Sejam todos bem-vindos!
+
+                                        <h4 class="sec-head">Hélder Fernando Pitta Gróz </h4>
+                                        <p style="margin-top:-10px;font-style: italic;">Procurador Geral da República</p>
+
+
+                                        </p>
                                     </div>
                                 </div>
-
                             </div>
-
+                            <!-- End col-->
                         </div>
-
                     </div>
-
-                </div>
-
-                <div class="col-xl-6 col-lg-6 col-sm-6">
-
-
-                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
-
-                        <a target="_blank" href="/pdf/eleitory/passos_de_voto.pdf" class="card-img-top img-fluid rounded"
-                            style='background-image:url("/site/images/eleitory/votar_8_passos-1536x905.jpg");background-position:center;background-size:cover;height:300px;'
-                            data-bs-toggle="modal" data-bs-target="#myModal2">
-                        </a>
-
-                        <div class="ud-feature-content">
-                            <a target="_blank" href="/pdf/eleitory/passos_de_voto.pdf">
-                                <h3 class="ud-feature-title">8 Passos para votação</h3>
-                            </a>
-
-                            <div class="modal" id="myModal2">
-                                <div class="modal-dialog modal-xl  modal-fullscreen-md-down">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-primary ">
-                                            <h5 class="modal-title text-white">8 Passos para votação</h5>
-                                            <button type="button" class="btn-close bg-white"
-                                                data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div style="height: 450px;width:100%;">
-                                                <embed src="/pdf/eleitory/passos_de_voto.pdf" type="application/pdf"
-                                                    height="100%" width="100%">
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-xl-6 col-lg-6 col-sm-6">
-
-
-                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
-
-                        <a target="_blank" href="/pdf/eleitory/Manual-dos-Membros-das-Assembleias-e-Mesas-de-Voto-2017.pdf"
-                            class="card-img-top img-fluid rounded"
-                            style='background-image:url("/site/images/eleitory/manual_MMAV-1536x905.jpg");background-position:center;background-size:cover;height:300px;'
-                            data-bs-toggle="modal" data-bs-target="#myModal3">
-                        </a>
-
-                        <div class="ud-feature-content">
-                            <a target="_blank"
-                                href="/pdf/eleitory/Manual-dos-Membros-das-Assembleias-e-Mesas-de-Voto-2017.pdf">
-                                <h3 class="ud-feature-title">Manual dos membros das assembleias e mesas de votos</h3>
-                            </a>
-
-                            <div class="modal" id="myModal3">
-                                <div class="modal-dialog modal-xl  modal-fullscreen-md-down">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-primary ">
-                                            <h5 class="modal-title text-white">Manual dos membros das assembleias e mesas de
-                                                votos</h5>
-                                            <button type="button" class="btn-close bg-white"
-                                                data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div style="height: 450px;width:100%;">
-                                                <embed
-                                                    src="/pdf/eleitory/Manual-dos-Membros-das-Assembleias-e-Mesas-de-Voto-2017.pdf"
-                                                    type="application/pdf" height="100%" width="100%">
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-xl-6 col-lg-6 col-sm-6">
-
-
-                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
-
-                        <a target="_blank" href="/pdf/eleitory/caderno_bolso.pdf" class="card-img-top img-fluid rounded"
-                            style='background-image:url("/site/images/eleitory/caderno-de-bolso-1536x905.jpg");background-position:center;background-size:cover;height:300px;'
-                            data-bs-toggle="modal" data-bs-target="#myModal4">
-                        </a>
-
-                        <div class="ud-feature-content">
-                            <a target="_blank" href="/pdf/eleitory/caderno_bolso.pdf">
-                                <h3 class="ud-feature-title">Caderno de bolso</h3>
-                            </a>
-
-                            <div class="modal" id="myModal4">
-                                <div class="modal-dialog modal-xl  modal-fullscreen-md-down">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-primary ">
-                                            <h5 class="modal-title text-white">Caderno de bolso</h5>
-                                            <button type="button" class="btn-close bg-white"
-                                                data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div style="height: 450px;width:100%;">
-                                                <embed src="/pdf/eleitory/caderno_bolso.pdf" type="application/pdf"
-                                                    height="100%" width="100%">
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-    <!-- ====== IMPRESSOS End ====== -->
-
-    <!-- ====== map Start ====== -->
-    <section id="map" class="ud-map mb-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12" style="margin-bottom:-50px;">
-                    <div class="ud-section-title">
-                        <h2 style="font-size:37px;">A Comissão Nacional Eleitoral Em Angola</h2>
-                    </div>
-                </div>
-                <div class="col-xl-12 col-lg-12">
-                    <img src="/site/images/map.jpg" alt="">
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ====== map End ====== -->
+        <!-- End About Section -->
 
-    <script>
-        $('.carousel').slick({
-            dots: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-        });
-    </script>
+
+
+        <!-- ======= Team Section ======= -->
+        <div id="team" class="our-team-area area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-headline text-center">
+                            <h2>Direcção</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row team-row" style="margin: 30px auto 30px auto;">
+
+                    <div class="col-md-6 first" style="
+                                                                                    transition: box-shadow .25s;
+                                                                                    border-radius: 2px;
+                                                                                    background-color: #fff; 
+                                                                                    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+                                                                                    margin: 30px auto 30px auto;
+                                                                                ">
+                        <div class="row" style="display: flex !important;">
+                            <div class="col-md-6" style="padding: 0!important;">
+                                <img style="height: 200px !important;" src="/site/img/team/3.jpg" alt="">
+                            </div>
+                            <div class=" col-md-5">
+                                <h4
+                                    style="font-size: 25px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 12px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
+                                    Hélder Fernando Pitta Gróz
+                                </h4>
+                                <div><span style="font-weight: 700;display: block;clear: both;">Procurador Geral da
+                                        República</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin: 30px auto 30px auto;">
+
+                    <div class="col-md-5 first" style="
+                                                                                        transition: box-shadow .25s;
+                                                                                        border-radius: 2px;
+                                                                                        background-color: #fff; 
+                                                                                        box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+                                                                                        margin: 30px auto 30px auto;
+                                                                                    ">
+                        <div class="row" style="display: flex !important;">
+                            <div class="col-md-6" style="padding: 0!important;">
+                                <img style="height: 165px !important;" src="/site/img/team/MotaLiz.jpeg" alt="">
+                            </div>
+                            <div class=" col-md-5">
+                                <h4
+                                    style="font-size: 20px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 3px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
+                                    Luís de Assunção Pedro da Mota Liz
+                                </h4>
+                                <div><span style="font-weight: 700;display: block;clear: both;">Vice-Procurador Geral da
+                                        República</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 first" style="
+                                                                                    transition: box-shadow .25s;
+                                                                                    border-radius: 2px;
+                                                                                    background-color: #fff; 
+                                                                                    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+                                                                                    margin: 30px auto 30px auto;
+                                                                                ">
+                        <div class="row" style="display: flex !important;">
+                            <div class="col-md-6" style="padding: 0!important;">
+                                <img style="height: 165px !important;" src="/site/img/team/Filomeno1.jpg" alt="">
+                            </div>
+                            <div class=" col-md-5">
+                                <h4
+                                    style="font-size: 20px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 3px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
+                                    Filomeno Octávio da Conceição
+                                </h4>
+                                <div><span style="font-weight: 700;display: block;clear: both;">Vice-Procurador
+                                        Militar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row"
+                    style="margin-top: 60px !important; margin-bottom: -30px; display: flex !important;justify-content:center !important;">
+                    <a href="membrospage">
+                        <h6 style="text-align: center; color: #800000;">Ver Todos ></h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End Team Section -->
+
+        <!-- ======= News Section ======= -->
+        <div class="suscribe-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-headline1 text-center">
+                            <h2 style="color: white;">Notícias</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if ($news)
+            <div id="news" class="blog-area">
+                <div class="blog-inner area-padding">
+                    <div class="blog-overly"></div>
+                    <div class="container ">
+                        <div class="row">
+                            @foreach ($news as $item)
+                                <!-- Start Left Blog -->
+                                <div class="col-md-4 col-sm-4 col-xs-12" style="margin-bottom: 30px;">
+                                    <div class="single-blog">
+                                        <div class="single-blog-img">
+                                            <a href="{!! url('/noticia/' . urlencode($item->title)) !!}">
+                                                <img style="object-fit: cover; width: 100%; height: 200px;"
+                                                    src="/storage/{{ $item->path }}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <span class="date-type">
+                                                <a href="{!! url('/noticia/' . urlencode($item->title)) !!}">
+                                                    <i
+                                                        class="fa fa-calendar"></i>{{ date('d-m-Y', strtotime($item->date)) }}
+                                                </a>
+                                            </span>
+                                        </div>
+
+                                        <div class="blog-text">
+                                            <a href="{!! url('/noticia/' . urlencode($item->title)) !!}">
+
+                                                <div
+                                                    style="display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis; height: 80px; margin-bottom: 6px;">
+                                                    <h4> {{ $item->title }}</h4>
+                                                </div>
+
+
+                                                <div
+                                                    style="display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis; height: 90px; margin-bottom: 6px;">
+                                                    <p>{!! html_entity_decode(mb_substr($item->body, 0, 200, 'UTF-8')) !!}...</p>
+                                                </div>
+
+                                            </a>
+                                        </div>
+                                        <span>
+                                            <a href="{!! url('/noticia/' . urlencode($item->title)) !!}" class="ready-btn">Ler Mais</a>
+                                        </span>
+                                    </div>
+                                    <!-- Start single blog -->
+                                </div>
+                                <!-- End Left Blog-->
+
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+        <!-- End News Section -->
+
+        <!-- ======= Testimonials Section ======= -->
+        <div class="testimonials-area">
+            <div class="testi-inner area-padding">
+                <div class="testi-overly"></div>
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <!-- Start testimonials Start -->
+                            <div class="testimonial-content text-center">
+                                <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
+                                <!-- start testimonial carousel -->
+                                <div class="owl-carousel testimonial-carousel">
+                                    <div class="single-testi">
+                                        <div class="testi-text">
+                                            <h2 style="color: white;">Missão</h2>
+                                            <p>
+                                                Promover a defesa da legalidade democrática, representando o Estado no
+                                                exercício da acção penal, na protecção dos direitos de pessoas singulares,
+                                                colectivas e de interesses difusos, na fiscalização da legalidade do
+                                                exercício da função jurisdicional e na direcção da instrução preparatória
+                                                dos processos, em prol do Estado Democrático e de Direito.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- End single item -->
+                                    <div class="single-testi">
+                                        <div class="testi-text">
+                                            <h2 style="color: white;">Visão</h2>
+                                            <p>
+                                                Até 2022 - conquistar o reconhecimento e a credibilidade da sociedade como
+                                                sendo uma instituição seriamente comprometida com a promoção da justiça,
+                                                defesa da legalidade e do exercício pleno da cidadania, bem como com o
+                                                combate ao crime, em geral, a à corrupção, em particular.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- End single item -->
+                                    <div class="single-testi">
+                                        <div class="testi-text">
+                                            <h2 style="color: white;">Valores</h2>
+                                            <p>
+                                                Autonomia Institucional, legalidade, ética, autonomia Funcional, hierarquia
+                                                e responsabilidade, unidade, rigor científico e excelência, transparência,
+                                                proximidade ao cidadão, iniciativa e celeridade.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- End single item -->
+                                    <div class="single-testi">
+                                        <div class="testi-text">
+                                            <h2 style="color: white;">Objectivo I</h2>
+                                            <p>
+                                                Promover a integridade, transparência e cultura de prestação de contas, bem
+                                                como melhorar a prestação de serviços na Administração Pública
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- End single item -->
+                                    <div class="single-testi">
+                                        <div class="testi-text">
+                                            <h2 style="color: white;">Objectivo II</h2>
+                                            <p>
+                                                Promover o envolvimento da sociedade na prevenção e no combate à corrupção
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- End single item -->
+                                    <div class="single-testi">
+                                        <div class="testi-text">
+                                            <h2 style="color: white;">Objectivo III</h2>
+                                            <p>
+                                                Intensificar a prevenção da corrupção e promover a integridade nos sectores
+                                                empresariais público e privado
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- End single item -->
+                                </div>
+                            </div>
+                            <!-- End testimonials end -->
+                        </div>
+                        <!-- End Right Feature -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Testimonials Section -->
+
+
+        <!-- ======= Galeria Section ======= -->
+        <div id="portfolio" class="portfolio-area area-padding fix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-headline text-center">
+                            <h2>Galeria</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row awesome-project-content">
+                    @foreach ($galleries as $item)
+
+                        <!-- single-gallery start -->
+                        <div class="col-md-4 col-sm-4 col-xs-12 design development">
+                            <div class="single-awesome-project">
+                                <div class="awesome-img">
+                                    <a href="#"><img style="object-fit: cover; width: 100%; height: 250px;"
+                                            src="<?= URL_BASE_FILES . $arquivo->imagem ?>" alt="" /></a>
+                                    <div class="add-actions text-center">
+                                        <div class="project-dec">
+                                            <a class="venobox" data-gall="myGallery"
+                                                href="<?= URL_BASE_FILES . $arquivo->imagem ?>">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single-gallery end -->
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <!-- End gallery Section -->
+
+        <!-- ======= Map Section ======= -->
+        <div class="map-area">
+            <div class="contact-inner area-padding">
+                <div class="contact-overly"></div>
+                <div class="container ">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="section-headline text-center">
+                                <h2>Órgãos Provinciais da PGR</h2>
+                            </div>
+                        </div>
+                        <div class="container content">
+
+                            <div class="col-md-12 all-map">
+                                <div class="mapcontainer">
+
+                                    <div class="map">
+                                        <span>Carregando o mapa...</span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Map Section -->
+    </main>
+    <!-- End #main -->
+
+
+
 @endsection
-@section('CSSJS')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
+@section('JS')
+    <!-- Section Map -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>
 
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" charset="utf-8">
+    </script>
+    <script src="/site/mapa/jsmap/jquery.mapael.js" charset="utf-8"></script>
+    <script src="/site/mapa/jsmap/maps/angola.js" charset="utf-8"></script>
+    <script src="/site/mapa/jsmap/map.js" charset="utf-8"></script>
+    <script src="/site/js/HttpRequest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.3.0/jquery.cookie.min.js"></script>
+    <script>
+        if (document.querySelectorAll("#ensign-nivoslider img.banner").length < 2) {
+            document.getElementsByClassName("nivo-directionNav")[0].style.display = "none";
+        }
+    </script>
 
 @endsection
