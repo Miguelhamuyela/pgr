@@ -310,7 +310,6 @@
  </div>
 
 
- @yield('JS')
 
  <!-- Vendor JS Files -->
  <script src="/site/vendor/jquery/jquery.min.js"></script>
@@ -329,6 +328,8 @@
  <!-- Template Main JS File -->
  <script src="/site/js/main.js"></script>
 
+
+ @yield('JS')
 
  </body>
 
