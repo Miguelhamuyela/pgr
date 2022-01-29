@@ -21,10 +21,8 @@ class DashboardController extends Controller
         /* Counts */
         $response['count_news'] = News::count();
         $response['count_gallery'] = Gallery::count();
-        $response['count_video'] = Video::count();
         $response['count_user'] = User::count();
-        /* lasted */
-        $response['reports'] = null;
+ 
 
         return view('admin.home.index', $response);
     }

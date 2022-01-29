@@ -49,25 +49,7 @@
             </div>
         </div>
 
-        <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-3 text-center">
-                            <span class="circle circle-sm bg-primary">
-                                <i class="fe fe-16 fe-video text-white mb-0"></i>
-                            </span>
-                        </div>
-                        <div class="col pr-0">
-                            <p class="small text-dark mb-0">Videos</p>
-                            <span class="h3 mb-0">{{ $count_video }}</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
+ 
         <div class="col-md-6 col-xl-3 mb-4">
             <div class="card shadow bg-primary text-white">
                 <div class="card-body">
