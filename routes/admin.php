@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('admin/imageGallery/delete/{id}', ['as' => 'admin.imageGallery.delete', 'uses' => 'Admin\ImageGalleryController@destroy']);
         /* End imageGallery */
 
-       
+
         /* legislação */
         Route::get('admin/legislação/index', ['as' => 'admin.legislation.index', 'uses' => 'Admin\LegislationController@index']);
         Route::get('admin/legislação/show/{id}', ['as' => 'admin.legislation.show', 'uses' => 'Admin\LegislationController@show']);
@@ -85,7 +85,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('admin/slideshow/delete/{id}', ['as' => 'admin.slideshow.delete', 'uses' => 'Admin\SlideShowController@destroy']);
         /* end slideshow */
 
-       
+
         /* news */
         Route::get('admin/news/index', ['as' => 'admin.news.index', 'uses' => 'Admin\NewsController@list']);
         Route::get('admin/news/show/{id}', ['as' => 'admin.news.show', 'uses' => 'Admin\NewsController@show']);
@@ -106,5 +106,27 @@ Route::middleware(['auth'])->group(function () {
         Route::get('admin/configuration/edit/{id}', ['as' => 'admin.configuration.edit', 'uses' => 'Admin\ConfigurationController@edit']);
         Route::put('admin/configuration/update/{id}', ['as' => 'admin.configuration.update', 'uses' => 'Admin\ConfigurationController@update']);
         /* end configuration */
+
+
+        /* dniap */
+        Route::get('admin/dniap/show', ['as' => 'admin.dniap.show', 'uses' => 'Admin\DniapController@show']);
+
+        Route::get('admin/dniap/edit/{id}', ['as' => 'admin.dniap.edit', 'uses' => 'Admin\DniapController@edit']);
+        Route::put('admin/dniap/update/{id}', ['as' => 'admin.dniap.update', 'uses' => 'Admin\DniapController@update']);
+        /* end dniap */
+
+        /* dnpcc */
+        Route::get('admin/dnpcc/show', ['as' => 'admin.dnpcc.show', 'uses' => 'Admin\DnpccController@show']);
+
+        Route::get('admin/dnpcc/edit/{id}', ['as' => 'admin.dnpcc.edit', 'uses' => 'Admin\DnpccController@edit']);
+        Route::put('admin/dnpcc/update/{id}', ['as' => 'admin.dnpcc.update', 'uses' => 'Admin\DnpccController@update']);
+        /* end dnpcc */
+
+        /* senra */
+        Route::get('admin/senra/show', ['as' => 'admin.senra.show', 'uses' => 'Admin\SenraController@show']);
+
+        Route::get('admin/senra/edit/{id}', ['as' => 'admin.senra.edit', 'uses' => 'Admin\SenraController@edit']);
+        Route::put('admin/senra/update/{id}', ['as' => 'admin.senra.update', 'uses' => 'Admin\SenraController@update']);
+        /* end senra */
     });
 });

@@ -16,6 +16,6 @@ class SenraController extends Controller
     {
 
         $response['senra'] = Senra::first();
-        return view('site.pgr.senra.index', $response);
+        return view('site.fightCorruption.senra.index', $response);
     }
 }

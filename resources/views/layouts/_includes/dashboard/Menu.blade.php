@@ -99,6 +99,39 @@
                         </ul>
                     </li>
 
+
+                    {{-- Menu de Combate a Corrupção --}}
+                    <p class="text-muted nav-heading mt-4 mb-1">
+                        <span>Combate a Corrupção</span>
+                    </p>
+                    <ul class="navbar-nav flex-fill w-100 mb-2">
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="{{ route('admin.dniap.show') }}">
+
+                                <i class="fe fe-file-text fe-16"></i>
+                                <span class="ml-3 item-text">Dniap</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-fill w-100 mb-2">
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="{{ route('admin.dnpcc.show') }}">
+
+                                <i class="fe fe-file-text fe-16"></i>
+                                <span class="ml-3 item-text">Dnpcc</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-fill w-100 mb-2">
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="{{ route('admin.senra.show') }}">
+
+                                <i class="fe fe-file-text fe-16"></i>
+                                <span class="ml-3 item-text">Senra</span>
+                            </a>
+                        </li>
+                    </ul>
+
                     {{-- Menu de Notícias --}}
                     <p class="text-muted nav-heading mt-4 mb-1">
                         <span> Notícias </span>
@@ -123,7 +156,7 @@
                             </li>
                         </ul>
                     </li>
-                   
+
 
 
                     {{-- Menu de Multimédia --}}
@@ -174,7 +207,7 @@
                     </li>
 
 
-            
+
                 @endif
 
                 @if ('Administrador' == Auth::user()->level)

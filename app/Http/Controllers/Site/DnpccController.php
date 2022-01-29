@@ -16,6 +16,6 @@ class DnpccController extends Controller
     {
 
         $response['dnpcc'] = Dnpcc::first();
-        return view('site.pgr.dnpcc.index', $response);
+        return view('site.fightCorruption.dnpcc.index', $response);
     }
 }
