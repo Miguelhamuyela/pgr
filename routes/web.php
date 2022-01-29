@@ -4,6 +4,14 @@ use Illuminate\Support\Facades\Route;
 
 /* SITE */
 route::get('/', ['as' => 'site.home', 'uses' => 'Site\HomeController@index']);
+
+
+/* PGR */
+Route::get('/dniap', ['as' => 'site.dniap', 'uses' => 'Site\DniapController@index']);
+Route::get('/dnpcc', ['as' => 'site.dnpcc', 'uses' => 'Site\DnpccController@index']);
+Route::get('/senra', ['as' => 'site.senra', 'uses' => 'Site\SenraController@index']);
+
+
 /* noticias */
 Route::get('/noticias', ['as' => 'site.news', 'uses' => 'Site\NewsController@index']);
 Route::get('/noticia/{title}', ['as' => 'site.news.show', 'uses' => 'Site\NewsController@show']);
