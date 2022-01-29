@@ -30,9 +30,9 @@ class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
 
-       /* $response['configuration'] = Configuration::first();
+        $response['configuration'] = Configuration::first();
         $response['elections'] = Election::orderBy('date', 'desc')->get();
 
-        view()->share($response);*/
+        view()->share($response);
     }
 }
