@@ -17,6 +17,6 @@ class PresidentController extends Controller
 
     {
         $response['presidents'] = President::get();
-        return view('site.cne.president.index', $response);
+        return view('site.pgr.president.index', $response);
     }
 }

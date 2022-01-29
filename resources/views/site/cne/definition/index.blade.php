@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ud-banner-content">
-                        <h1>Definição da CNE</h1>
+                        <h1>Definição da PGR</h1>
                     </div>
                 </div>
             </div>

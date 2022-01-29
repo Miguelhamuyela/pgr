@@ -16,6 +16,6 @@ class DeliberationController extends Controller
     public function index()
     {
         $response['deleiberations'] = Deliberation::get();
-        return view('site.cne.deliberation.index', $response);
+        return view('site.pgr.deliberation.index', $response);
     }
 }

@@ -15,7 +15,7 @@
 </div> <!-- /.col -->
 <div class="col-md-6">
     <div class="form-group">
-        <label for="link">Link do Video <small>link do canal do Youtube do Portal Oficial da CNE</small></label>
+        <label for="link">Link do Video <small>link do canal do Youtube do Portal Oficial da PGR</small></label>
         <input type="text" name="link" id="link" value="{{ isset($video->link) ? $video->link : 'https://www.youtube.com/embed/' }}"
             class="form-control border-secondary" required>
     </div>

@@ -15,7 +15,7 @@
                     <div class="col-auto">
                         @isset($compositon)
                             <a type="button" class="btn btn-sm btn-primary text-white"
-                                href="{{ url("admin/cne/composition/edit/{$compositon->id}") }}">
+                                href="{{ url("admin/pgr/composition/edit/{$compositon->id}") }}">
                                 <span class="fe fe-edit fe-16 mr-2"></span>Editar o Texto
                             </a>
                         @endisset

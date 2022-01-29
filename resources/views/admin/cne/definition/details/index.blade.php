@@ -15,7 +15,7 @@
                     <div class="col-auto">
                         @isset($definitions)
                             <a type="button" class="btn btn-sm btn-primary text-white"
-                                href="{{ url("admin/cne/definition/edit/{$definitions->id}") }}">
+                                href="{{ url("admin/pgr/definition/edit/{$definitions->id}") }}">
                                 <span class="fe fe-edit fe-16 mr-2"></span>Editar o Texto
                             </a>
                         @endisset

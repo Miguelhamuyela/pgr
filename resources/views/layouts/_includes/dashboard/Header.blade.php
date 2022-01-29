@@ -11,16 +11,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/logotipo/icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/logotipo/icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/logotipo/icon.png">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/site/img/favi.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/site/img/favi.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/site/img/favi.png">
 
     <title>@yield('titulo')</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="/dashboard/css/simplebar.css">
     <!-- Fonts CSS -->
-
-    {{-- <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}"> --}}
 
 
     <link

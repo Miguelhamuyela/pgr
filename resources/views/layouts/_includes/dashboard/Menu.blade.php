@@ -42,7 +42,7 @@
             <!-- nav bar -->
             <div class="w-100  d-flex">
                 <a class="navbar-brand mx-auto  flex-fill text-center" href="{{ route('admin.home') }}">
-                    <img rel="icon" src="/images/logotipo/logo.png" style="width:120px; margin:auto" />
+                    <img rel="icon" src="/site/img/log_pgr.png" style="width:200px; margin:auto" />
 
                 </a>
             </div>
@@ -73,7 +73,7 @@
 
                     {{-- Menu de Slideshows --}}
                     <p class="text-muted nav-heading mt-2 mb-1">
-                        <span> A CNE</span>
+                        <span> A PGR</span>
                     </p>
 
 

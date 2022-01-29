@@ -122,16 +122,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('admin/deliberation/delete/{id}', ['as' => 'admin.deliberation.delete', 'uses' => 'Admin\DeliberationController@destroy']);
 
         /**definicao */
-        Route::get('admin/cne/definition/show', ['as' => 'admin.definition.show', 'uses' => 'Admin\DefinitionController@show']);
+        Route::get('admin/pgr/definition/show', ['as' => 'admin.definition.show', 'uses' => 'Admin\DefinitionController@show']);
 
-        Route::get('admin/cne/definition/edit/{id}', ['as' => 'admin.definition.edit', 'uses' => 'Admin\DefinitionController@edit']);
-        Route::put('admin/cne/definition/update/{id}', ['as' => 'admin.definition.update', 'uses' => 'Admin\DefinitionController@update']);
+        Route::get('admin/pgr/definition/edit/{id}', ['as' => 'admin.definition.edit', 'uses' => 'Admin\DefinitionController@edit']);
+        Route::put('admin/pgr/definition/update/{id}', ['as' => 'admin.definition.update', 'uses' => 'Admin\DefinitionController@update']);
 
         /**President */
-        Route::get('admin/cne/president/show', ['as' => 'admin.president.show', 'uses' => 'Admin\PresidentController@show']);
+        Route::get('admin/pgr/president/show', ['as' => 'admin.president.show', 'uses' => 'Admin\PresidentController@show']);
 
-        Route::get('admin/cne/president/edit/{id}', ['as' => 'admin.president.edit', 'uses' => 'Admin\PresidentController@edit']);
-        Route::put('admin/cne/president/update/{id}', ['as' => 'admin.president.update', 'uses' => 'Admin\PresidentController@update']);
+        Route::get('admin/pgr/president/edit/{id}', ['as' => 'admin.president.edit', 'uses' => 'Admin\PresidentController@edit']);
+        Route::put('admin/pgr/president/update/{id}', ['as' => 'admin.president.update', 'uses' => 'Admin\PresidentController@update']);
 
         /* member */
         Route::get('admin/member/index', ['as' => 'admin.member.index', 'uses' => 'Admin\MemberController@list']);
@@ -147,16 +147,16 @@ Route::middleware(['auth'])->group(function () {
         /* end member */
 
         /**Mandate */
-        Route::get('admin/cne/mandate/show', ['as' => 'admin.mandate.show', 'uses' => 'Admin\MandateController@show']);
+        Route::get('admin/pgr/mandate/show', ['as' => 'admin.mandate.show', 'uses' => 'Admin\MandateController@show']);
 
-        Route::get('admin/cne/mandate/edit/{id}', ['as' => 'admin.mandate.edit', 'uses' => 'Admin\MandateController@edit']);
-        Route::put('admin/cne/mandate/update/{id}', ['as' => 'admin.mandate.update', 'uses' => 'Admin\MandateController@update']);
+        Route::get('admin/pgr/mandate/edit/{id}', ['as' => 'admin.mandate.edit', 'uses' => 'Admin\MandateController@edit']);
+        Route::put('admin/pgr/mandate/update/{id}', ['as' => 'admin.mandate.update', 'uses' => 'Admin\MandateController@update']);
 
         /** Structure*/
-        Route::get('admin/cne/Structure/show', ['as' => 'admin.Structure.show', 'uses' => 'Admin\StructureController@show']);
+        Route::get('admin/pgr/Structure/show', ['as' => 'admin.Structure.show', 'uses' => 'Admin\StructureController@show']);
 
-        Route::get('admin/cne/Structure/edit/{id}', ['as' => 'admin.Structure.edit', 'uses' => 'Admin\StructureController@edit']);
-        Route::put('admin/cne/Structure/update/{id}', ['as' => 'admin.Structure.update', 'uses' => 'Admin\StructureController@update']);
+        Route::get('admin/pgr/Structure/edit/{id}', ['as' => 'admin.Structure.edit', 'uses' => 'Admin\StructureController@edit']);
+        Route::put('admin/pgr/Structure/update/{id}', ['as' => 'admin.Structure.update', 'uses' => 'Admin\StructureController@update']);
 
         /* impressos */
         Route::get('admin/printed/index', ['as' => 'admin.printed.index', 'uses' => 'Admin\PrintedController@list']);
@@ -171,10 +171,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('admin/printed/delete/{id}', ['as' => 'admin.printed.delete', 'uses' => 'Admin\PrintedController@destroy']);
 
         /* composition */
-        Route::get('admin/cne/composition/show', ['as' => 'admin.composition.show', 'uses' => 'Admin\CompositonController@show']);
+        Route::get('admin/pgr/composition/show', ['as' => 'admin.composition.show', 'uses' => 'Admin\CompositonController@show']);
 
-        Route::get('admin/cne/composition/edit/{id}', ['as' => 'admin.composition.edit', 'uses' => 'Admin\CompositonController@edit']);
-        Route::put('admin/cne/composition/update/{id}', ['as' => 'admin.composition.update', 'uses' => 'Admin\CompositonController@update']);
+        Route::get('admin/pgr/composition/edit/{id}', ['as' => 'admin.composition.edit', 'uses' => 'Admin\CompositonController@edit']);
+        Route::put('admin/pgr/composition/update/{id}', ['as' => 'admin.composition.update', 'uses' => 'Admin\CompositonController@update']);
 
         /* video */
         Route::get('admin/video/index', ['as' => 'admin.video.index', 'uses' => 'Admin\VideoController@list']);

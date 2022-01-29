@@ -16,6 +16,6 @@ class InstructiveController extends Controller
     public function index()
     {
         $response['instructional'] = Instructional::get();
-        return view('site.cne.instructive.index', $response);
+        return view('site.pgr.instructive.index', $response);
     }
 }

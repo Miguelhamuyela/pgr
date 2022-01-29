@@ -7,7 +7,7 @@
             <h2 class="h5 page-title">
                 <a href="{{ route('admin.composition.show') }}"><u>Ver Composição</u></a>
                 
-                > CNE editar composição
+                > PGR editar composição
 
             </h2>
         </div>
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             @endif
-            <form action='{{ url("admin/cne/composition/update/$compositon->id") }}' method="POST"
+            <form action='{{ url("admin/pgr/composition/update/$compositon->id") }}' method="POST"
                 enctype="multipart/form-data" class="row">
                 @csrf
                 @method('PUT')

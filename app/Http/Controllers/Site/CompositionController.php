@@ -18,6 +18,6 @@ class CompositionController extends Controller
     {
         $response['compositons'] = Compositon::get();
         $response['members'] = Member::orderBy('name', 'asc')->get();
-        return view('site.cne.composition.index', $response);
+        return view('site.pgr.composition.index', $response);
     }
 }

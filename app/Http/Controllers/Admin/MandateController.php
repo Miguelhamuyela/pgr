@@ -19,13 +19,13 @@ class MandateController extends Controller
     {
         //
         $response['mandates'] = Mandate::first();
-        return view('admin.cne.mandate.details.index', $response);
+        return view('admin.pgr.mandate.details.index', $response);
     }
 
     public function edit($id)
     {
         $response['mandates'] = Mandate::find($id);
-        return view('admin.cne.mandate.edit.index', $response);
+        return view('admin.pgr.mandate.edit.index', $response);
     }
 
 

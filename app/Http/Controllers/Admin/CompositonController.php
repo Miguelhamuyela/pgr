@@ -18,7 +18,7 @@ class CompositonController extends Controller
     {
         //
         $response['compositon'] = Compositon::first();
-        return view('admin.cne.composition.details.index', $response);
+        return view('admin.pgr.composition.details.index', $response);
     }
 
     /**
@@ -32,7 +32,7 @@ class CompositonController extends Controller
     {
         $response['compositon'] = Compositon::find($id);
 
-        return view('admin.cne.composition.edit.index',  $response);
+        return view('admin.pgr.composition.edit.index',  $response);
     }
 
     /**

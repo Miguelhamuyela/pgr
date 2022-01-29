@@ -18,8 +18,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
-        $response['news'] = News::where([['state', 'Autorizada']])->orderBy('id', 'desc')->paginate(6);
+        
+        $response['lasted'] = News::where([['state', 'Autorizada']])->orderBy('title', 'desc')->limit(4)->get();
+        $response['news'] = News::where([['state', 'Autorizada']])->orderBy('date', 'desc')->paginate(6);
         return view('site.news.all.index', $response);
     }
 
@@ -35,7 +36,7 @@ class NewsController extends Controller
         //
         try {
             $response['news'] = News::where([['state', 'Autorizada'], ['title', urldecode($title)]])->first();
-            $response['lasted'] = News::where([['state', 'Autorizada'], ['title', '!=', urldecode($title)]])->orderBy('id', 'desc')->limit(4)->get();
+            $response['lasted'] = News::where([['state', 'Autorizada'], ['title','!=', urldecode($title)]])->orderBy('id', 'desc')->limit(4)->get();
             return view('site.news.single.index', $response);
         } catch (\Throwable $th) {
             return redirect()->route('site.news');

@@ -16,6 +16,6 @@ class MandateController extends Controller
     public function index()
     {
         $response['mandates'] = Mandate::get();
-        return view('site.cne.mandate.index', $response);
+        return view('site.pgr.mandate.index', $response);
     }
 }

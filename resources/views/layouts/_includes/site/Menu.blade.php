@@ -78,7 +78,7 @@
                     </li>
                     <!-- Fim do Novo Menu -->
 
-                    <li><a href="noticiaspage">Notícias</a></li>
+                    <li><a href="{{ route('site.news') }}">Notícias</a></li>
 
 
                     <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu4`);">Documentos</a>
@@ -92,7 +92,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="contactpage">Contactos</a></li>
+                    <li><a href="{{ route('site.contact') }}">Contactos</a></li>
                     <li><a href="https://webmail.pgr.ao/" target="_blank"><i class="fa fa-envelope"
                                 aria-hidden="true"></i></a></li>
                 </ul>

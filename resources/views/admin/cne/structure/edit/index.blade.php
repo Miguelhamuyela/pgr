@@ -22,7 +22,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ url('admin/cne/Structure/update/1') }}" method="POST" enctype="multipart/form-data"
+            <form action="{{ url('admin/pgr/Structure/update/1') }}" method="POST" enctype="multipart/form-data"
                 class="row">
                 @csrf
                 @method('PUT')

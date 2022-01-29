@@ -46,7 +46,7 @@ class AudioController extends Controller
 
      
         $middle = $request->file('audio');
-        $file = $middle->storeAs('audios', 'CNE-Audio-' . uniqid(rand(1, 5)).".".$middle->extension());
+        $file = $middle->storeAs('audios', 'PGR-Audio-' . uniqid(rand(1, 5)).".".$middle->extension());
      
 
         $audio = Audio::create([
@@ -100,7 +100,7 @@ class AudioController extends Controller
         ]);
 
         if ($middle = $request->file('audio')) {
-            $file = $middle->storeAs('audios', 'CNE-Audio-' . uniqid(rand(1, 5)).".".$middle->extension());
+            $file = $middle->storeAs('audios', 'PGR-Audio-' . uniqid(rand(1, 5)).".".$middle->extension());
          
         } else {
             $file = Audio::find($id)->audio;

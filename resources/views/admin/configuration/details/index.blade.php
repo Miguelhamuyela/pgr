@@ -62,7 +62,7 @@
                         <div class="col-md-12 mb-2">
                             <p class="mb-1 text-dark">
                                 <b>Endereço:</b><br>
-                                <a href="{{ $configuration->adress }}" target="_blank"> {{ $configuration->adress }}</a>
+                                {{ $configuration->adress }}
                             </p>
                         </div>
                         <div class="col-md-12 mb-2">

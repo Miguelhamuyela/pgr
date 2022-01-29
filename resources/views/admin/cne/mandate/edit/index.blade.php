@@ -7,7 +7,7 @@
             <h2 class="h5 page-title">
              
                 <a href="{{ route('admin.mandate.show') }}"><u>Ver Mandato</u></a>
-                > CNE editar Mandato
+                > PGR editar Mandato
 
             </h2>
         </div>
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             @endif
-            <form action='{{ url('admin/cne/mandate/update/1') }}' method="POST" enctype="multipart/form-data"
+            <form action='{{ url('admin/pgr/mandate/update/1') }}' method="POST" enctype="multipart/form-data"
                 class="row">
                 @csrf
                 @method('PUT')

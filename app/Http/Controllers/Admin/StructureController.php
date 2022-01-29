@@ -19,7 +19,7 @@ class StructureController extends Controller
     {
         //
         $response['structure'] = Structure::first();
-        return view('admin.cne.structure.details.index', $response);
+        return view('admin.pgr.structure.details.index', $response);
     }
 
     /**
@@ -32,7 +32,7 @@ class StructureController extends Controller
     {
         $response['structure'] = Structure::find($id);
 
-        return view('admin.cne.structure.edit.index', $response);
+        return view('admin.pgr.structure.edit.index', $response);
     }
 
     /**

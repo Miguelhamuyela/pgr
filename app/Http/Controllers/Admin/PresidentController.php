@@ -18,13 +18,13 @@ class PresidentController extends Controller
     {
         //
         $response['presidents'] = President::first();
-        return view('admin.cne.president.details.index', $response);
+        return view('admin.pgr.president.details.index', $response);
     }
 
     public function edit($id)
     {
         $response['presidents'] = President::find($id);
-        return view('admin.cne.president.edit.index', $response);
+        return view('admin.pgr.president.edit.index', $response);
     }
 
     public function update(Request $request, $id)

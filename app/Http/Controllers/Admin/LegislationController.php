@@ -47,7 +47,7 @@ class LegislationController extends Controller
 
 
         $middle = $request->file('file');
-        $file = $middle->storeAs('legislations', 'CNE-Legislação-' . uniqid(rand(1, 5)) . "." . $middle->extension());
+        $file = $middle->storeAs('legislations', 'PGR-Legislação-' . uniqid(rand(1, 5)) . "." . $middle->extension());
 
         $legislation = Legislation::create([
             'file' => $file,
@@ -97,7 +97,7 @@ class LegislationController extends Controller
         ]);
 
         if ($middle = $request->file('file')) {
-            $file = $middle->storeAs('legislations', 'CNE-Legislação-' . uniqid(rand(1, 5)) . "." . $middle->extension());
+            $file = $middle->storeAs('legislations', 'PGR-Legislação-' . uniqid(rand(1, 5)) . "." . $middle->extension());
         } else {
             $file = Legislation::find($id)->file;
         }

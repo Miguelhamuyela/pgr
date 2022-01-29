@@ -12,7 +12,7 @@ class InstrutionalController extends Controller
     public function index()
     {
         $response['instructionals'] = Instructional::get();
-        return view('admin.cne.instructional.list.index', $response);
+        return view('admin.pgr.instructional.list.index', $response);
     }
 
     /**
@@ -22,7 +22,7 @@ class InstrutionalController extends Controller
      */
     public function create()
     {
-        return view('admin.cne.instructional.create.index');
+        return view('admin.pgr.instructional.create.index');
     }
 
     /**
@@ -40,7 +40,7 @@ class InstrutionalController extends Controller
         ]);
 
         $middle = $request->file('file');
-        $file = $middle->storeAs('Instructionals', 'CNE-Instrutivo-' . uniqid(rand(1, 5)).".".$middle->extension());
+        $file = $middle->storeAs('Instructionals', 'PGR-Instrutivo-' . uniqid(rand(1, 5)).".".$middle->extension());
      
 
         $Instructional = Instructional::create([
@@ -60,7 +60,7 @@ class InstrutionalController extends Controller
     {
         $response['institucion'] = Instructional::find($id);
 
-        return view('admin.cne.instructional.detalis.index', $response);
+        return view('admin.pgr.instructional.detalis.index', $response);
     }
 
     /**
@@ -72,7 +72,7 @@ class InstrutionalController extends Controller
     public function edit($id)
     {
         $response['institucion'] = Instructional::find($id);
-        return view('admin.cne.instructional.edit.index', $response);
+        return view('admin.pgr.instructional.edit.index', $response);
         //
     }
 
@@ -93,7 +93,7 @@ class InstrutionalController extends Controller
 
       
         if ($middle = $request->file('file')) {
-            $file = $middle->storeAs('Instructionals', 'CNE-Instrutivo-' . uniqid(rand(1, 5)).".".$middle->extension());
+            $file = $middle->storeAs('Instructionals', 'PGR-Instrutivo-' . uniqid(rand(1, 5)).".".$middle->extension());
          
         } else {
             $file = Instructional::find($id)->file;

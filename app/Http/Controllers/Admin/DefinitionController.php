@@ -18,13 +18,13 @@ class DefinitionController extends Controller
     {
         //
         $response['definitions'] = Defini::first();
-        return view('admin.cne.definition.details.index', $response);
+        return view('admin.pgr.definition.details.index', $response);
     }
     
     public function edit($id)
     {
         $response['definitions'] = Defini::find($id);
-        return view('admin.cne.definition.edit.index', $response);
+        return view('admin.pgr.definition.edit.index', $response);
     }
 
     public function update(Request $request, $id)

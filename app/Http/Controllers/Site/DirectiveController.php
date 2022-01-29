@@ -19,6 +19,6 @@ class DirectiveController extends Controller
         $response['categories'] = DirectiveCategory::orderBy('title', 'asc')->get();
         $response['directives'] = Directive::get();
 
-        return view('site.cne.directive.index', $response);
+        return view('site.pgr.directive.index', $response);
     }
 }

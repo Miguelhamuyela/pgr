@@ -12,7 +12,7 @@ class DeliberationController extends Controller
     public function index()
     {
         $response['deliberations'] = Deliberation::get();
-        return view('admin.cne.deliberation.list.index', $response);
+        return view('admin.pgr.deliberation.list.index', $response);
     }
 
     /**
@@ -22,7 +22,7 @@ class DeliberationController extends Controller
      */
     public function create()
     {
-        return view('admin.cne.deliberation.create.index');
+        return view('admin.pgr.deliberation.create.index');
     }
 
     /**
@@ -58,7 +58,7 @@ class DeliberationController extends Controller
     {
         $response['deliberation'] = Deliberation::find($id);
 
-        return view('admin.cne.deliberation.detalis.index', $response);
+        return view('admin.pgr.deliberation.detalis.index', $response);
     }
 
     /**
@@ -70,7 +70,7 @@ class DeliberationController extends Controller
     public function edit($id)
     {
         $response['deliberation'] = Deliberation::find($id);
-        return view('admin.cne.deliberation.edit.index', $response);
+        return view('admin.pgr.deliberation.edit.index', $response);
     }
 
     /**

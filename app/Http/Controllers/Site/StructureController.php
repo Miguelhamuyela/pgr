@@ -16,6 +16,6 @@ class StructureController extends Controller
     public function index()
     {
         $response['structures'] = Structure::get();
-        return view('site.cne.estruture.index', $response);
+        return view('site.pgr.estruture.index', $response);
     }
 }

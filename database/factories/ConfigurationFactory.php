@@ -26,9 +26,10 @@ class ConfigurationFactory extends Factory
             'facebook' => "Aqui vai o link do facebook",
             'youtube' => "Aqui vai o link do Youtube",
             'instagram' => "Aqui vai o link do instagram",
-            'email' => "Aqui vai o email",
+            'email' => "procuradoriageraldarepublica@pgr.ao",
             'twitter' => "Aqui vai o link do instagram twitter",
-            'telefone' => "Aqui vai os telefones separados por uma barra(/)"
+            'telefone' => "+244 222 333 172 / +244 222 333 170",
+            'adress' => "Rua 17 de Setembro, Palácio da Justiça, 4°, 5° e 6º andares."
         ];
     }
 }

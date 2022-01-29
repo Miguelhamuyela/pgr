@@ -16,6 +16,6 @@ class RegulationController extends Controller
     public function index()
     {
         $response['regulamenets'] = Regulation::get();
-        return view('site.cne.regulation.index', $response);
+        return view('site.pgr.regulation.index', $response);
     }
 }

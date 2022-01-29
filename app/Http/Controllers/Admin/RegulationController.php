@@ -16,7 +16,7 @@ class RegulationController extends Controller
     public function index()
     {
         $response['regulaments'] = Regulation::get();
-        return view('admin.cne.regulations.list.index', $response);
+        return view('admin.pgr.regulations.list.index', $response);
     }
 
     /**
@@ -26,7 +26,7 @@ class RegulationController extends Controller
      */
     public function create()
     {
-        return view('admin.cne.regulations.create.index');
+        return view('admin.pgr.regulations.create.index');
     }
 
     /**
@@ -43,7 +43,7 @@ class RegulationController extends Controller
         ]);
 
         $middle = $request->file('file');
-        $file = $middle->storeAs('regulations', 'CNE-Regulamentação-' . uniqid(rand(1, 5)).".".$middle->extension());
+        $file = $middle->storeAs('regulations', 'PGR-Regulamentação-' . uniqid(rand(1, 5)).".".$middle->extension());
      
         $regulament = Regulation::create([
             'file' => $file,
@@ -63,7 +63,7 @@ class RegulationController extends Controller
     {
         $response['regulament'] = Regulation::find($id);
 
-        return view('admin.cne.regulations.detalis.index', $response);
+        return view('admin.pgr.regulations.detalis.index', $response);
     }
 
     /**
@@ -76,7 +76,7 @@ class RegulationController extends Controller
     {
         $response['regulament'] = Regulation::find($id);
 
-        return view('admin.cne.regulations.edit.index', $response);
+        return view('admin.pgr.regulations.edit.index', $response);
     }
 
     /**
@@ -94,7 +94,7 @@ class RegulationController extends Controller
         ]);
 
         if ($middle = $request->file('file')) {
-            $file = $middle->storeAs('regulations', 'CNE-Regulamentação-' . uniqid(rand(1, 5)).".".$middle->extension());
+            $file = $middle->storeAs('regulations', 'PGR-Regulamentação-' . uniqid(rand(1, 5)).".".$middle->extension());
         } else {
             $file = Regulation::find($id)->file;
         }

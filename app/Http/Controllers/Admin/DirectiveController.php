@@ -14,7 +14,7 @@ class DirectiveController extends Controller
     {
         $response['categories'] = DirectiveCategory::orderBy('title', 'asc')->get();
         $response['directives'] = Directive::with('category')->get();
-        return view('admin.cne.directive.list.index', $response);
+        return view('admin.pgr.directive.list.index', $response);
     }
 
     /**
@@ -25,7 +25,7 @@ class DirectiveController extends Controller
     public function create()
     {
         $response['categories'] = DirectiveCategory::orderBy('title', 'asc')->get();
-        return view('admin.cne.directive.create.index', $response);
+        return view('admin.pgr.directive.create.index', $response);
     }
 
     /**
@@ -44,7 +44,7 @@ class DirectiveController extends Controller
 
 
         $middle = $request->file('file');
-        $file = $middle->storeAs('directives', 'CNE-Directiva-' . uniqid(rand(1, 5)).".".$middle->extension());
+        $file = $middle->storeAs('directives', 'PGR-Directiva-' . uniqid(rand(1, 5)).".".$middle->extension());
      
 
         $directive = Directive::create([
@@ -65,7 +65,7 @@ class DirectiveController extends Controller
     public function show($id)
     {
         $response['directive'] = Directive::with('category')->find($id);
-        return view('admin.cne.directive.details.index', $response);
+        return view('admin.pgr.directive.details.index', $response);
     }
 
     /**
@@ -79,7 +79,7 @@ class DirectiveController extends Controller
 
         $response['categories'] = DirectiveCategory::orderBy('title', 'asc')->get();
         $response['directive'] = Directive::with('category')->find($id);
-        return view('admin.cne.directive.edit.index', $response);
+        return view('admin.pgr.directive.edit.index', $response);
     }
 
     /**
@@ -98,7 +98,7 @@ class DirectiveController extends Controller
         ]);
 
         if ($middle = $request->file('file')) {
-            $file = $middle->storeAs('directives', 'CNE-Directiva-' . uniqid(rand(1, 5)).".".$middle->extension());
+            $file = $middle->storeAs('directives', 'PGR-Directiva-' . uniqid(rand(1, 5)).".".$middle->extension());
          
         } else {
             $file = Directive::find($id)->file;

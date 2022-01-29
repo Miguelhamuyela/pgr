@@ -6,7 +6,7 @@
         <div class="card-body">
             <h2 class="h5 page-title">
                 <a href="{{ route('admin.definition.show') }}"><u>Ver Definições</u></a>
-                > CNE Editar Definição
+                > PGR Editar Definição
 
             </h2>
         </div>
@@ -22,7 +22,7 @@
                     </ul>
                 </div>
             @endif
-            <form action='{{ url('admin/cne/definition/update/1') }}' method="POST" enctype="multipart/form-data"
+            <form action='{{ url('admin/pgr/definition/update/1') }}' method="POST" enctype="multipart/form-data"
                 class="row">
                 @csrf
                 @method('PUT')
