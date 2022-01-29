@@ -6,7 +6,7 @@
             <div class="container d-flex logo"
                 style="width: 70%; display: flex; justify-content: center; align-items: center;">
                 <div class="logo mr-auto">
-                    <a class="navbar-brand text-light" href="index">
+                    <a class="navbar-brand text-light" href="{{ route('site.home') }}">
                         <div class="logo-composition">
                             <img style="padding: 10px; padding-left: 0px; margin-top:20px; width: 280px !important;"
                                 src="/site/img/log_pgr.png" alt="">
@@ -70,9 +70,9 @@
                     <!-- Novo Menu -->
                     <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu3`);">Combate a Corrupção</a>
                         <ul class="menu3">
-                            <li><a href="{{ route('site.dnpcc')}}">DNPCC</a></li>
-                            <li><a href="{{ route('site.dniap')}}">DNIAP</a></li>
-                            <li><a href="{{ route('site.senra')}}">SENRA</a></li>
+                            <li><a href="{{ route('site.dnpcc') }}">DNPCC</a></li>
+                            <li><a href="{{ route('site.dniap') }}">DNIAP</a></li>
+                            <li><a href="{{ route('site.senra') }}">SENRA</a></li>
                         </ul>
                     </li>
                     <!-- Fim do Novo Menu -->
