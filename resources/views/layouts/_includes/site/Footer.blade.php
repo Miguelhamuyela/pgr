@@ -36,8 +36,8 @@
                          <div class="footer-head">
                              <h4>Contactos</h4>
                              <div class="footer-contacts">
-                                 <p><span>Telefone:</span> +244 222 333 172 <br /> +244 222 333 170</p>
-                                 <p><span>Email:</span> procuradoriageraldarepublica@pgr.ao</p>
+                                 <p><span>Telefone:</span> {{ $configuration->telefone }}</p>
+                                 <p><span>Email:</span> {{ $configuration->email }}</p>
                              </div>
                          </div>
                          <div class="footer-icons">

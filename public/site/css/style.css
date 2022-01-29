@@ -347,7 +347,7 @@ div#preloader {
 }
 
 .header-bg1 {
-    background: url(../img/micro.jpeg);
+    background: url(../img/banners/micro.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -355,7 +355,7 @@ div#preloader {
 }
 
 .header-bg2 {
-    background: url(../img/reclamo.jpg);
+    background: url(../img/banners/reclamo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -363,7 +363,7 @@ div#preloader {
 }
 
 .header-bg3 {
-    background: url(../img/quem.jpg);
+    background: url(../img/banners/quem.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -371,7 +371,7 @@ div#preloader {
 }
 
 .header-bg4 {
-    background: url(../img/notices.jpeg);
+    background: url(../img/banners/notices.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;

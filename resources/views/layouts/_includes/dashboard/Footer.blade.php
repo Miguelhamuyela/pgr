@@ -1,6 +1,6 @@
 <footer class="py-1 mt-4 bg-primary">
 
-    <p class="text-center mt-3 text-white">© {{date('Y')}} Comissão Nacional Eleitoral, CNE</p>
+    <p class="text-center mt-3 text-white">© {{date('Y')}} Procuradoria Geral da República, PGR</p>
 </footer>
 @if (session('create'))
     <script>

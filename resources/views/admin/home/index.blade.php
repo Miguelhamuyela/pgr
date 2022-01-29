@@ -1,12 +1,12 @@
 @extends('layouts.merge.dashboard')
-@section('titulo', 'Portal Oficial da CNE')
+@section('titulo', 'Dashboard Oficial da PGR')
 @section('content')
 
 
     <div class="card mb-2">
         <div class="card-body">
             <h2 class="h5 page-title">
-                Portal da Comissão Nacional Eleitoral - <b>CNE</b> <br>
+                Procuradoria Geral da República - <b>PGR</b> <br>
                 <small>Painel Administrativo</small>
             </h2>
         </div>
@@ -49,25 +49,7 @@
             </div>
         </div>
 
-        <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-3 text-center">
-                            <span class="circle circle-sm bg-primary">
-                                <i class="fe fe-16 fe-video text-white mb-0"></i>
-                            </span>
-                        </div>
-                        <div class="col pr-0">
-                            <p class="small text-dark mb-0">Videos</p>
-                            <span class="h3 mb-0">{{ $count_video }}</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
+ 
         <div class="col-md-6 col-xl-3 mb-4">
             <div class="card shadow bg-primary text-white">
                 <div class="card-body">

@@ -16,6 +16,6 @@ class DefinitionController extends Controller
     public function index()
     {
         $response['defintions'] = Defini::get();
-        return view('site.cne.definition.index', $response);
+        return view('site.pgr.definition.index', $response);
     }
 }

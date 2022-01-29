@@ -193,7 +193,7 @@
                                                                         align="center">
 
                                                                         <img align="center" border="0"
-                                                                            src="https://cidadedemalanje.com/wp-content/uploads/2020/06/cne-angola.jpg"
+                                                                            src="https://cidadedemalanje.com/wp-content/uploads/2020/06/pgr-angola.jpg"
                                                                             alt="Image" title="Image" 
                                                                             width="260" />
 
@@ -902,7 +902,7 @@
                                                                 style="color: #ecf7ff; line-height: 140%; text-align: center; word-wrap: break-word;">
                                                                 <p style="font-size: 14px; line-height: 140%;">&copy;
                                                                     {{ date('Y') }} Todos os Direitos Reservados -
-                                                                    CNE</p>
+                                                                    PGR</p>
                                                             </div>
 
                                                         </td>
