@@ -16,6 +16,6 @@ class DniapController extends Controller
     {
 
         $response['dniap'] = Dniap::first();
-        return view('site.pgr.dniap.index', $response);
+        return view('site.fightCorruption.dniap.index', $response);
     }
 }
