@@ -36,7 +36,7 @@
                          <div class="footer-head">
                              <h4>Contactos</h4>
                              <div class="footer-contacts">
-                                 <p><span>Tel:</span> +244 222 333 172 <br /> +244 222 333 170</p>
+                                 <p><span>Telefone:</span> +244 222 333 172 <br /> +244 222 333 170</p>
                                  <p><span>Email:</span> procuradoriageraldarepublica@pgr.ao</p>
                              </div>
                          </div>
@@ -64,7 +64,7 @@
          <div class="container">
              <div class="footer-menu col-md-6 col-sm-12">
                  <div class="copyright">
-                     Copyright © {{ date('Y') }} Todos os direitos reservados
+                     Copyright © {{ date('Y') }} Todos os Direitos Reservados
                  </div>
              </div>
          </div>

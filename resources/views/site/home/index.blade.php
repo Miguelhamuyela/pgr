@@ -243,7 +243,7 @@
 
                                                 <div
                                                     style="display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis; height: 90px; margin-bottom: 6px;">
-                                                    <p> {{ $item->title }} ..... </p>
+                                                    <p>{!! html_entity_decode(mb_substr($item->body, 0, 200, 'UTF-8')) !!}...</p>
                                                 </div>
 
                                             </a>

@@ -48,7 +48,7 @@
                 style="display: flex; justify-content: center; align-items: center;">
                 <ul>
 
-                    <li><a href="index#">Início</a></li>
+                    <li><a href="{{ route('site.home') }}">Início</a></li>
                     <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu1`);">Institucional</a>
                         <ul class="menu1">
                             <li><a href="sobrepage">Sobre a PGR</a></li>
