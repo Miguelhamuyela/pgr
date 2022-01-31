@@ -51,8 +51,8 @@
                     <li><a href="{{ route('site.home') }}">Início</a></li>
                     <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu1`);">Institucional</a>
                         <ul class="menu1">
-                            <li><a href="sobrepage">Sobre a PGR</a></li>
-                            <li><a href="membrospage">Quem é Quem</a></li>
+                            <li><a href="{{ route('site.about') }}">Sobre a PGR</a></li>
+                            <li><a href="{{ route('site.whoIsWho') }}">Quem é Quem</a></li>
                             <!-- Novo Submenu
                                 <li><a href="javascript:void(0);">Órgãos PGR</a></li>
                                 Fim do Novo Submenu -->

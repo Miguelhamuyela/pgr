@@ -35,7 +35,7 @@
         <label for="image">Capa a carregar</label>
         <div class="custom-file">
             <input value="{{ isset($gallery->file) ? $gallery->file : '' }}" class="form-control border-secondary"
-                type="file" name="image" id="image" required>
+                type="file" name="image" id="image">
 
         </div>
     </div>

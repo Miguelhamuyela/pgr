@@ -6,7 +6,13 @@ use Illuminate\Support\Facades\Route;
 route::get('/', ['as' => 'site.home', 'uses' => 'Site\HomeController@index']);
 
 
-/* PGR */
+/* sobre */
+Route::get('/sobre', ['as' => 'site.about', 'uses' => 'Site\AboutController@index']);
+
+/* quem-e-quem */
+Route::get('/quem-e-quem', ['as' => 'site.whoIsWho', 'uses' => 'Site\WhoIsWhoController@index']);
+
+/* combate a corrupção */
 Route::get('/dniap', ['as' => 'site.dniap', 'uses' => 'Site\DniapController@index']);
 Route::get('/dnpcc', ['as' => 'site.dnpcc', 'uses' => 'Site\DnpccController@index']);
 Route::get('/senra', ['as' => 'site.senra', 'uses' => 'Site\SenraController@index']);
