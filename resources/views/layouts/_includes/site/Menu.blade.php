@@ -64,7 +64,7 @@
                         <ul class="menu2">
                             <li><a href="denunciaspage">Denúncias</a></li>
 
-                            <li><a href="reclamacoespage">Reclamações</a></li>
+                            <li><a href="{{ route('site.reclamation') }}">Reclamações</a></li>
                         </ul>
                     </li>
                     <!-- Novo Menu -->

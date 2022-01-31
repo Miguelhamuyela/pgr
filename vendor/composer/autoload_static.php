@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
+class ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -553,6 +553,7 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'App\\Http\\Controllers\\Admin\\ImageGalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ImageGalleryController.php',
         'App\\Http\\Controllers\\Admin\\LegislationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LegislationController.php',
         'App\\Http\\Controllers\\Admin\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/NewsController.php',
+        'App\\Http\\Controllers\\Admin\\ReclamationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ReclamationController.php',
         'App\\Http\\Controllers\\Admin\\SenraController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SenraController.php',
         'App\\Http\\Controllers\\Admin\\SlideShowController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SlideShowController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
@@ -574,9 +575,10 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'App\\Http\\Controllers\\Site\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/HomeController.php',
         'App\\Http\\Controllers\\Site\\LegislationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/LegislationController.php',
         'App\\Http\\Controllers\\Site\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/NewsController.php',
+        'App\\Http\\Controllers\\Site\\ReclamationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/ReclamationController.php',
         'App\\Http\\Controllers\\Site\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/SearchController.php',
         'App\\Http\\Controllers\\Site\\SenraController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/SenraController.php',
-        'App\\Http\\Controllers\\Site\\WhoisWhoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/WhoisWhoController.php',
+        'App\\Http\\Controllers\\Site\\WhoIsWhoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/WhoIsWhoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Administrador' => __DIR__ . '/../..' . '/app/Http/Middleware/Administrador.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -599,6 +601,7 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'App\\Models\\ImageGallery' => __DIR__ . '/../..' . '/app/Models/ImageGallery.php',
         'App\\Models\\Legislation' => __DIR__ . '/../..' . '/app/Models/Legislation.php',
         'App\\Models\\News' => __DIR__ . '/../..' . '/app/Models/News.php',
+        'App\\Models\\Reclamation' => __DIR__ . '/../..' . '/app/Models/Reclamation.php',
         'App\\Models\\Senra' => __DIR__ . '/../..' . '/app/Models/Senra.php',
         'App\\Models\\SlideShow' => __DIR__ . '/../..' . '/app/Models/SlideShow.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -6160,10 +6163,10 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3::$classMap;
 
         }, null, ClassLoader::class);
     }

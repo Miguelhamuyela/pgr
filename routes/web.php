@@ -12,6 +12,10 @@ Route::get('/sobre', ['as' => 'site.about', 'uses' => 'Site\AboutController@inde
 /* quem-e-quem */
 Route::get('/quem-e-quem', ['as' => 'site.whoIsWho', 'uses' => 'Site\WhoIsWhoController@index']);
 
+/* Para o Cidadão */
+Route::get('/reclamação', ['as' => 'site.reclamation', 'uses' => 'Site\ReclamationController@index']);
+Route::get('/reclamation/store', ['as' => 'site.reclamation.store', 'uses' => 'Site\ReclamationController@store']);
+
 /* combate a corrupção */
 Route::get('/dniap', ['as' => 'site.dniap', 'uses' => 'Site\DniapController@index']);
 Route::get('/dnpcc', ['as' => 'site.dnpcc', 'uses' => 'Site\DnpccController@index']);
