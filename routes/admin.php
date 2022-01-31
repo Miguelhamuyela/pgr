@@ -138,5 +138,6 @@ Route::middleware(['auth'])->group(function () {
 
         /* reclamation */
         Route::get('admin/reclamation/index', ['as' => 'admin.reclamation.index', 'uses' => 'Admin\ReclamationController@index']);
+        Route::get('admin/reclamation/show/{id}', ['as' => 'admin.reclamation.show', 'uses' => 'Admin\ReclamationController@show']);
     });
 });
