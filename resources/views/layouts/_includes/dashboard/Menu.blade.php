@@ -100,6 +100,20 @@
                     </li>
 
 
+                    {{-- Menu Para o Cidadão --}}
+                    <p class="text-muted nav-heading mt-4 mb-1">
+                        <span>Para o Cidadão</span>
+                    </p>
+                    <ul class="navbar-nav flex-fill w-100 mb-2">
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="{{ route('admin.reclamation.index') }}">
+
+                                <i class="fe fe-file-text fe-16"></i>
+                                <span class="ml-3 item-text">Reclamação</span>
+                            </a>
+                        </li>
+                    </ul>
+
                     {{-- Menu de Combate a Corrupção --}}
                     <p class="text-muted nav-heading mt-4 mb-1">
                         <span>Combate a Corrupção</span>

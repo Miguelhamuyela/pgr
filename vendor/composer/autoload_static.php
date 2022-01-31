@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
+class ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -547,10 +547,14 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\ConfigurationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ConfigurationController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
+        'App\\Http\\Controllers\\Admin\\DniapController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DniapController.php',
+        'App\\Http\\Controllers\\Admin\\DnpccController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DnpccController.php',
         'App\\Http\\Controllers\\Admin\\GalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GalleryController.php',
         'App\\Http\\Controllers\\Admin\\ImageGalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ImageGalleryController.php',
         'App\\Http\\Controllers\\Admin\\LegislationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LegislationController.php',
         'App\\Http\\Controllers\\Admin\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/NewsController.php',
+        'App\\Http\\Controllers\\Admin\\ReclamationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ReclamationController.php',
+        'App\\Http\\Controllers\\Admin\\SenraController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SenraController.php',
         'App\\Http\\Controllers\\Admin\\SlideShowController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SlideShowController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
@@ -562,6 +566,7 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'App\\Http\\Controllers\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisteredUserController.php',
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Site\\AboutController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/AboutController.php',
         'App\\Http\\Controllers\\Site\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/ContactController.php',
         'App\\Http\\Controllers\\Site\\DniapController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/DniapController.php',
         'App\\Http\\Controllers\\Site\\DnpccController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/DnpccController.php',
@@ -570,8 +575,10 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'App\\Http\\Controllers\\Site\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/HomeController.php',
         'App\\Http\\Controllers\\Site\\LegislationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/LegislationController.php',
         'App\\Http\\Controllers\\Site\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/NewsController.php',
+        'App\\Http\\Controllers\\Site\\ReclamationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/ReclamationController.php',
         'App\\Http\\Controllers\\Site\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/SearchController.php',
         'App\\Http\\Controllers\\Site\\SenraController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/SenraController.php',
+        'App\\Http\\Controllers\\Site\\WhoIsWhoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/WhoIsWhoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Administrador' => __DIR__ . '/../..' . '/app/Http/Middleware/Administrador.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -585,6 +592,7 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Mail\\Contact' => __DIR__ . '/../..' . '/app/Mail/Contact.php',
+        'App\\Models\\About' => __DIR__ . '/../..' . '/app/Models/About.php',
         'App\\Models\\Configuration' => __DIR__ . '/../..' . '/app/Models/Configuration.php',
         'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
         'App\\Models\\Dniap' => __DIR__ . '/../..' . '/app/Models/Dniap.php',
@@ -593,9 +601,11 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'App\\Models\\ImageGallery' => __DIR__ . '/../..' . '/app/Models/ImageGallery.php',
         'App\\Models\\Legislation' => __DIR__ . '/../..' . '/app/Models/Legislation.php',
         'App\\Models\\News' => __DIR__ . '/../..' . '/app/Models/News.php',
+        'App\\Models\\Reclamation' => __DIR__ . '/../..' . '/app/Models/Reclamation.php',
         'App\\Models\\Senra' => __DIR__ . '/../..' . '/app/Models/Senra.php',
         'App\\Models\\SlideShow' => __DIR__ . '/../..' . '/app/Models/SlideShow.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\WhoIsWho' => __DIR__ . '/../..' . '/app/Models/WhoIsWho.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -710,7 +720,9 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\ConfigurationFactory' => __DIR__ . '/../..' . '/database/factories/ConfigurationFactory.php',
-        'Database\\Factories\\LegislationFactory' => __DIR__ . '/../..' . '/database/factories/LegislationFactory.php',
+        'Database\\Factories\\DniapFactory' => __DIR__ . '/../..' . '/database/factories/DniapFactory.php',
+        'Database\\Factories\\DnpccFactory' => __DIR__ . '/../..' . '/database/factories/DnpccFactory.php',
+        'Database\\Factories\\SenraFactory' => __DIR__ . '/../..' . '/database/factories/SenraFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
@@ -6151,10 +6163,10 @@ class ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit590f420efc18d87d7463ceb1f712fd1b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit76fe8dd190408ff7202ba3d2947a1eb3::$classMap;
 
         }, null, ClassLoader::class);
     }

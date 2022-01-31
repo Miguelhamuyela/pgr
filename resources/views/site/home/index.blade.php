@@ -112,15 +112,15 @@
                 <div class="row team-row" style="margin: 30px auto 30px auto;">
 
                     <div class="col-md-6 first" style="
-                                                                                    transition: box-shadow .25s;
-                                                                                    border-radius: 2px;
-                                                                                    background-color: #fff; 
-                                                                                    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
-                                                                                    margin: 30px auto 30px auto;
-                                                                                ">
+                                                                                                        transition: box-shadow .25s;
+                                                                                                        border-radius: 2px;
+                                                                                                        background-color: #fff; 
+                                                                                                        box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+                                                                                                        margin: 30px auto 30px auto;
+                                                                                                    ">
                         <div class="row" style="display: flex !important;">
                             <div class="col-md-6" style="padding: 0!important;">
-                                <img style="height: 200px !important;" src="/site/img/team/3.jpg" alt="">
+                                <img style="height: 200px !important;" src="/site/img/procuradores/3.jpg" alt="">
                             </div>
                             <div class=" col-md-5">
                                 <h4
@@ -137,16 +137,11 @@
 
                 <div class="row" style="margin: 30px auto 30px auto;">
 
-                    <div class="col-md-5 first" style="
-                                                                                        transition: box-shadow .25s;
-                                                                                        border-radius: 2px;
-                                                                                        background-color: #fff; 
-                                                                                        box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-                                                                                        margin: 30px auto 30px auto;
-                                                                                    ">
+                    <div class="col-md-5 first"
+                        style="transition: box-shadow .25s;border-radius: 2px;background-color: #fff;  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); margin: 30px auto 30px auto; ">
                         <div class="row" style="display: flex !important;">
                             <div class="col-md-6" style="padding: 0!important;">
-                                <img style="height: 165px !important;" src="/site/img/team/MotaLiz.jpeg" alt="">
+                                <img style="height: 165px !important;" src="/site/img/procuradores/MotaLiz.jpeg" alt="">
                             </div>
                             <div class=" col-md-5">
                                 <h4
@@ -160,16 +155,11 @@
                         </div>
                     </div>
 
-                    <div class="col-md-5 first" style="
-                                                                                    transition: box-shadow .25s;
-                                                                                    border-radius: 2px;
-                                                                                    background-color: #fff; 
-                                                                                    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-                                                                                    margin: 30px auto 30px auto;
-                                                                                ">
+                    <div class="col-md-5 first"
+                        style="transition: box-shadow .25s; border-radius: 2px;  background-color: #fff; box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);  margin: 30px auto 30px auto; ">
                         <div class="row" style="display: flex !important;">
                             <div class="col-md-6" style="padding: 0!important;">
-                                <img style="height: 165px !important;" src="/site/img/team/Filomeno1.jpg" alt="">
+                                <img style="height: 165px !important;" src="/site/img/procuradores/Filomeno1.jpg" alt="">
                             </div>
                             <div class=" col-md-5">
                                 <h4
@@ -186,7 +176,7 @@
 
                 <div class="row"
                     style="margin-top: 60px !important; margin-bottom: -30px; display: flex !important;justify-content:center !important;">
-                    <a href="membrospage">
+                    <a href="{{ route('site.whoIsWho') }}">
                         <h6 style="text-align: center; color: #800000;">Ver Todos ></h6>
                     </a>
                 </div>
@@ -368,15 +358,15 @@
                     @foreach ($galleries as $item)
 
                         <!-- single-gallery start -->
-                        <div class="col-md-4 col-sm-4 col-xs-12 design development">
+                        <div class="col-12 col-md-4 col-lg-4 design development">
                             <div class="single-awesome-project">
                                 <div class="awesome-img">
                                     <a href="#"><img style="object-fit: cover; width: 100%; height: 250px;"
-                                            src="<?= URL_BASE_FILES . $arquivo->imagem ?>" alt="" /></a>
+                                            src="/storage/{{ $item->cover }}" alt="" /></a>
                                     <div class="add-actions text-center">
                                         <div class="project-dec">
                                             <a class="venobox" data-gall="myGallery"
-                                                href="<?= URL_BASE_FILES . $arquivo->imagem ?>">
+                                                href="/storage/{{ $item->cover }}">
                                             </a>
                                         </div>
                                     </div>

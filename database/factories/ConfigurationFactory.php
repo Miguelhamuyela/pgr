@@ -23,11 +23,11 @@ class ConfigurationFactory extends Factory
     public function definition()
     {
         return [
-            'facebook' => "Aqui vai o link do facebook",
+            'facebook' => "https://www.facebook.com/Procuradoria-Geral-da-Rep%C3%BAblica-102762631302067/?ref=py_c",
             'youtube' => "Aqui vai o link do Youtube",
             'instagram' => "Aqui vai o link do instagram",
             'email' => "procuradoriageraldarepublica@pgr.ao",
-            'twitter' => "Aqui vai o link do instagram twitter",
+            'twitter' => "https://twitter.com/pgrangola",
             'telefone' => "+244 222 333 172 / +244 222 333 170",
             'adress' => "Rua 17 de Setembro, Palácio da Justiça, 4°, 5° e 6º andares."
         ];
