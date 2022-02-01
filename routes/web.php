@@ -14,7 +14,7 @@ Route::get('/quem-e-quem', ['as' => 'site.whoIsWho', 'uses' => 'Site\WhoIsWhoCon
 
 /* Para o Cidadão */
 Route::get('/reclamação', ['as' => 'site.reclamation', 'uses' => 'Site\ReclamationController@index']);
-Route::get('/reclamation/store', ['as' => 'site.reclamation.store', 'uses' => 'Site\ReclamationController@store']);
+Route::post('/reclamation/store', ['as' => 'site.reclamation.store', 'uses' => 'Site\ReclamationController@store']);
 
 /* combate a corrupção */
 Route::get('/dniap', ['as' => 'site.dniap', 'uses' => 'Site\DniapController@index']);

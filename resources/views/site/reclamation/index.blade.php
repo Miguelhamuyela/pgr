@@ -109,6 +109,13 @@
 @endsection
 
 @section('JS')
-    <script src="/site/js/HttpRequest.js"></script>
-    <script src="/site/js/alert.js"></script>
+    @if (session('save'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Reclamação enviada com sucesso!',
+                showConfirmButton: true
+            })
+        </script>
+    @endif
 @endsection
