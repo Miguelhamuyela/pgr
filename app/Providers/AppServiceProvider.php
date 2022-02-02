@@ -31,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
 
         $response['configuration'] = Configuration::first();
 
+
         view()->share($response);
+
     }
 }

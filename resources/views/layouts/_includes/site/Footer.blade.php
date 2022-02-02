@@ -309,7 +309,108 @@
      </div>
  </div>
 
+ @if (session('create'))
+ <script>
+     Swal.fire({
+         icon: 'success',
+         title: 'Cadastrado com sucesso!',
+         showConfirmButton: true
+     })
+ </script>
 
+@elseif(session('destroy'))
+ <script>
+     Swal.fire({
+         icon: 'info',
+         title: 'Eliminado com sucesso!',
+         showConfirmButton: true
+     })
+ </script>
+
+@elseif(session('complaint'))
+ <script>
+     Swal.fire({
+         icon: 'success',
+         title: 'Denúcia cadastrada com sucesso !',
+         showConfirmButton: true
+     })
+ </script>
+
+
+@elseif(session('edit'))
+ <script>
+     Swal.fire({
+         icon: 'success',
+         title: 'Alterações foram salvas com sucesso!',
+         showConfirmButton: true
+     })
+ </script>
+@elseif(session('create_image'))
+ <script>
+     Swal.fire({
+         icon: 'success',
+         title: 'Imagens foram salvas com sucesso!',
+         showConfirmButton: true
+     })
+ </script>
+
+@elseif(session('erro_students'))
+ <script>
+     Swal.fire({
+         icon: 'error',
+         title: 'Este estudante já esta cadastrado nesta turma e curso!',
+         showConfirmButton: true
+     })
+ </script>
+
+@elseif(session('romm_occupied'))
+ <script>
+     Swal.fire({
+         icon: 'error',
+         title: 'Esta sala estará ocupada neste horário!',
+         showConfirmButton: true
+     })
+ </script>
+
+@elseif(session('room_Satatus'))
+ <script>
+     Swal.fire({
+         icon: 'error',
+         title: 'Existe uma sala com este nome!',
+         showConfirmButton: true
+     })
+ </script>
+
+
+@elseif(session('existing_candidate'))
+ <script>
+     Swal.fire({
+         icon: 'error',
+         title: 'Já existe um estudante com este Número de Identificação',
+         showConfirmButton: true
+     })
+ </script>
+
+@elseif(session('NoAuth'))
+ <script>
+     Swal.fire({
+         icon: 'error',
+         title: 'Não tem autorização para visualizar esta página!',
+         showConfirmButton: false,
+         timer: 2500
+     })
+ </script>
+
+@elseif(session('candidates_status'))
+ <script>
+     Swal.fire({
+         icon: 'error',
+         title: 'Não foi encontrado Pagamento deste Estudante com o status pago !',
+         showConfirmButton: false,
+         timer: 4500
+     })
+ </script>
+@endif
 
  <!-- Vendor JS Files -->
  <script src="/site/vendor/jquery/jquery.min.js"></script>

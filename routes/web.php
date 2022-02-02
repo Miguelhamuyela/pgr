@@ -5,6 +5,22 @@ use Illuminate\Support\Facades\Route;
 /* SITE */
 route::get('/', ['as' => 'site.home', 'uses' => 'Site\HomeController@index']);
 
+/*outros documentos* */
+route::get('/outros-documentos', ['as' => 'site.', 'uses' => 'Site\reportController@index']);
+
+/**outros-documentos*/
+route::get('/outros-documentos', ['as' => 'site.otherDocument', 'uses' => 'Site\OtherDocumeController@index']);
+/*relatório* */
+route::get('/relatorio-anuais', ['as' => 'site.report', 'uses' => 'Site\reportController@index']);
+
+/*comunicados* */
+route::get('/comunicados', ['as' => 'site.announcements', 'uses' => 'Site\AnnouncementController@index']);
+
+/**publicações */
+route::get('/publicacoes', ['as' => 'site.publication', 'uses' => 'Site\PublicationController@index']);
+/**denucias */
+route::get('/denucias', ['as' => 'site.complaint', 'uses' => 'Site\ComplaintController@index']);
+route::post('/create', ['as' => 'site.complaint.store', 'uses' => 'Site\ComplaintController@store']);
 
 /* sobre */
 Route::get('/sobre', ['as' => 'site.about', 'uses' => 'Site\AboutController@index']);
