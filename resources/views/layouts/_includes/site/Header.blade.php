@@ -23,6 +23,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/site/img/favi.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/site/img/favi.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/site/img/favi.png">
+    <link rel="stylesheet" href="/css/sweetalert2.css">
 
 
     {{-- sweetalert --}}
@@ -256,5 +257,5 @@
 <body data-target="#navbar-example">
 
 
-   
+
 

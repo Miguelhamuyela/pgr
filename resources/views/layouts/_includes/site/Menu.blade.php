@@ -62,7 +62,7 @@
 
                     <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu2`);">Para o Cidadão</a>
                         <ul class="menu2">
-                            <li><a href="denunciaspage">Denúncias</a></li>
+                            <li><a href="{{ route('site.complaint') }}">Denúncias</a></li>
 
                             <li><a href="{{ route('site.reclamation') }}">Reclamações</a></li>
                         </ul>
@@ -82,12 +82,12 @@
 
                     <li class="drop-down"><a href="" onclick="mostrarAtivo(this, `menu4`);">Documentos</a>
                         <ul class="menu2">
-                            <li><a href="legislacoespage">Legislações</a></li>
+                            <li><a href="{{ route('site.legislation') }}">Legislações</a></li>
 
-                            <li><a href="comunicados">Comunicados</a></li>
-                            <li><a href="publicacoes">Publicações</a></li>
-                            <li><a href="r_anuais">Relatórios Anuais</a></li>
-                            <li><a href="outros_doc">Outros Documentos</a></li>
+                            <li><a href="{{ route('site.announcements') }}">Comunicados</a></li>
+                            <li><a href="{{ route('site.publication') }}">Publicações</a></li>
+                            <li><a href="{{ route('site.report') }}">Relatórios Anuais</a></li>
+                            <li><a href="{{ route('site.otherDocument') }}">Outros Documentos</a></li>
                         </ul>
                     </li>
 
