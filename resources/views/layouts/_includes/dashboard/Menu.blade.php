@@ -155,7 +155,16 @@
                                 <span class="ml-3 item-text">Reclamação</span>
                             </a>
                         </li>
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="{{ route('admin.complaint.index') }}">
+
+                                <i class="fe fe-file-text fe-16"></i>
+                                <span class="ml-3 item-text">Denúcias</span>
+                            </a>
+                        </li>
                     </ul>
+
+
 
                     {{-- Menu de Combate a Corrupção --}}
                     <p class="text-muted nav-heading mt-4 mb-1">
