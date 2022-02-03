@@ -73,7 +73,7 @@
 
                     {{-- Menu de Slideshows --}}
                     <p class="text-muted nav-heading mt-2 mb-1">
-                        <span> A PGR</span>
+                        <span> Documentos</span>
                     </p>
 
                     <li class="nav-item dropdown">
@@ -98,8 +98,51 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a href="#announcement" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-file-text fe-16"></i>
 
 
+                            <span class="ml-3 item-text"> Comunicados</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="announcement">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.announcement.create') }}">
+                                    <span class="ml-1 item-text">Cadastrar Comunicados</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.announcement.index') }}">
+                                    <span class="ml-1 item-text">Listar Comunicados</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#publication" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-file-text fe-16"></i>
+
+
+                            <span class="ml-3 item-text"> Publicações</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="publication">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.publication.create') }}">
+                                    <span class="ml-1 item-text">Cadastrar Publicações</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.publication.index') }}">
+                                    <span class="ml-1 item-text">Listar Publicações</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     {{-- Menu Para o Cidadão --}}
                     <p class="text-muted nav-heading mt-4 mb-1">
                         <span>Para o Cidadão</span>
@@ -112,7 +155,16 @@
                                 <span class="ml-3 item-text">Reclamação</span>
                             </a>
                         </li>
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="{{ route('admin.complaint.index') }}">
+
+                                <i class="fe fe-file-text fe-16"></i>
+                                <span class="ml-3 item-text">Denúcias</span>
+                            </a>
+                        </li>
                     </ul>
+
+
 
                     {{-- Menu de Combate a Corrupção --}}
                     <p class="text-muted nav-heading mt-4 mb-1">

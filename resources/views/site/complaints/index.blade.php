@@ -1,5 +1,5 @@
 @extends('layouts.merge.site')
-@section('titulo', 'PGR - Denúncias')
+@section('titulo', ' Denúncias')
 @section('content')
 
 <main id="main">
@@ -41,7 +41,9 @@
                         <h4 class="sec-head">Para apresentar, preencha o formulário abaixo</h4>
                     </div>
 
-                    <form class="card-body" method="POST" action="{{ route('site.complaint.store') }}"    enctype="multipart/form-data">
+
+                        <form action="{{ route('site.complaint.store') }}" method="POST" enctype="multipart/form-data"
+                        class="row">
                     @csrf
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -58,7 +60,7 @@
                                 <fieldset style="margin-bottom: 50px;">
                                     <legend>Dados do Denunciante</legend>
                                     <p>
-                                        <label for='campo_202'>Nome</label><input type='text' name='name' id='campo_202' class='form-control' value='old('name')' placeholder=''></p>
+                                        <label for='campo_202'>Nome</label><input type='text' name='name' id='campo_202' class='form-control' value='' placeholder=''></p>
                                     <p>
                                         <label for='campo_203'>Email</label><input type='email' name='email' id='campo_203' class='form-control' value='' placeholder=''></p>
                                     <p>
@@ -92,7 +94,9 @@
                                     <p>
                                         <label for='campo_201'>Documentos e outras provas que fundamentam a sua denúncia</label><textarea type='textarea' name='documentsEvidenc' id='campo_201' class='form-control' placeholder=''></textarea><i>Indique se possui ou onde se encontram documentos que pensa serem relevantes para a prova. Se os tiver digitalizado, envie-os através da função abaixo "Anexar ficheiro". Se preferir, pode enviá-los por correio para a morada da PGR.</i></p>
                                     <p>
-                                        <label for='campo_212'>Ficheiro anexo</label><input type='file' multiple data-height='120px' name='attachment[]' id='campo_212' class='dropify form-control' value='' data-default-file='' placeholder='' data-show-errors='true' data-show-remove='false'><i>Pode submeter ficheiros de imagem ou PDF.</i></p>
+                                        <input type="file" name="attachment" id="file" value=""
+                                        class="form-control border-secondary"><i>Pode submeter ficheiros de imagem ou PDF.</i></p>
+
                                 </fieldset>
                                 <button style="margin-top: 30px;border-color: #800000 !important; background-color: #800000 !important;" class="btn btn-primary" id="btn-submit">Enviar</button>
                             </div>

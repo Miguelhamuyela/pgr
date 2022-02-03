@@ -18,9 +18,7 @@
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <?php if (is_array($informacoe)) foreach ($informacoe as $key => $informacoe) :
-                            if ($informacoe->tipo == "Sobre") :
-                        ?>
+                         xcvxcvx
                             <div class="row">
                                 <!-- single-well start-->
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -29,7 +27,7 @@
                                             style="-webkit-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);-moz-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);">
 
                                             <img style="object-fit: cover; width: 100%; height: 270px; border-radius: 2px;"
-                                                src="<?= URL_BASE_FILES . $informacoe->imagem ?>" alt="">
+                                                src="" alt="">
 
                                         </div>
                                     </div>
@@ -39,10 +37,10 @@
                                     <div class="well-middle">
                                         <div class="single-well">
 
-                                            <h4 class="sec-head"> <?= $informacoe->titulo ?></h4>
+                                            <h4 class="sec-head">Titulo</h4>
 
                                             <p>
-                                                <?= $informacoe->descricao ?> </p>
+                                                iformações</p>
                                             <ul>
                                                 <li>
                                                     <a href="/site/docs/organograma.pdf" target="_blank"><i
@@ -60,7 +58,7 @@
                                 <!-- End col-->
                             </div>
                         </div>
-                        <?php elseif ($informacoe->tipo == "EDIFÍCIO-SEDE") : ?>
+                        EDIFÍCIO-SEDE
                         <div class="carousel-item">
 
                             <div class="row">
@@ -73,7 +71,7 @@
                                             style="-webkit-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);-moz-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);">
 
                                             <img style="object-fit: cover; width: 100%; height: 270px; border-radius: 2px;"
-                                                src="<?= URL_BASE_FILES . $informacoe->imagem ?>" alt="">
+                                                src="" alt="">
 
                                         </div>
                                     </div>
@@ -85,7 +83,7 @@
 
 
                                             <p>
-                                                <?= $informacoe->descricao ?> </p>
+                                               descrição </p>
                                             </p>
                                         </div>
                                     </div>
@@ -98,8 +96,7 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         </ol>
-                        <?php endif;
-                        endforeach; ?>
+
                     </div>
 
                 </div>
