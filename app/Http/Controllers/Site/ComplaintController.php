@@ -31,11 +31,16 @@ class ComplaintController extends Controller
             'identificationSuspects'    => 'required',
             'knowledgeFacts'    => 'required', ]);
 
+
+        if(isset($request->attachment)){
+            $middle = $request->file('attachment');
+            $file = $middle->storeAs('attachment', 'PGR-denucias' . uniqid(rand(1, 5)) . "." . $middle->extension());
+
         Complaint::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'attachment' => $request->documentsEvidenc,
+            'attachment' => $file,
             'documentsEvidenc' => $request->documentsEvidenc,
             'amountsInvolved' => $request->amountsInvolved,
             'knowledgeFacts' => $request->knowledgeFacts,
@@ -43,6 +48,26 @@ class ComplaintController extends Controller
             'actsCorruption' => $request->actsCorruption,
             'datesPeriods' => $request->datesPeriods,
             'identificationSuspects' => $request->identificationSuspects, ]);
+        }
+        else{
+
+            Complaint::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+
+                'documentsEvidenc' => $request->documentsEvidenc,
+                'amountsInvolved' => $request->amountsInvolved,
+                'knowledgeFacts' => $request->knowledgeFacts,
+                'complaintData' => $request->complaintData,
+                'actsCorruption' => $request->actsCorruption,
+                'datesPeriods' => $request->datesPeriods,
+                'identificationSuspects' => $request->identificationSuspects, ]);
+        }
+
+
+
+
 
         return redirect()->back()->with('complaint', '1');
     }

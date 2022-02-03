@@ -62,15 +62,35 @@ Route::middleware(['auth'])->group(function () {
         /* legislação */
         Route::get('admin/legislação/index', ['as' => 'admin.legislation.index', 'uses' => 'Admin\LegislationController@index']);
         Route::get('admin/legislação/show/{id}', ['as' => 'admin.legislation.show', 'uses' => 'Admin\LegislationController@show']);
-
         Route::get('admin/legislação/create', ['as' => 'admin.legislation.create', 'uses' => 'Admin\LegislationController@create']);
         Route::post('admin/legislaação/store', ['as' => 'admin.legislation.store', 'uses' => 'Admin\LegislationController@store']);
-
         Route::get('admin/legislação/edit/{id}', ['as' => 'admin.legislation.edit', 'uses' => 'Admin\LegislationController@edit']);
         Route::put('admin/legislação/update/{id}', ['as' => 'admin.legislation.update', 'uses' => 'Admin\LegislationController@update']);
-
         Route::get('admin/legislação/delete/{id}', ['as' => 'admin.legislation.delete', 'uses' => 'Admin\LegislationController@destroy']);
         /* end legislação */
+
+          /* announcement */
+          Route::get('admin/comunicados/index', ['as' => 'admin.announcement.index', 'uses' => 'Admin\AnnouncementController@index']);
+          Route::get('admin/comunicados/show/{id}', ['as' => 'admin.announcement.show', 'uses' => 'Admin\AnnouncementController@show']);
+          Route::get('admin/comunicados/create', ['as' => 'admin.announcement.create', 'uses' => 'Admin\AnnouncementController@create']);
+          Route::post('admin/comunicados/store', ['as' => 'admin.announcement.store', 'uses' => 'Admin\AnnouncementController@store']);
+          Route::get('admin/comunicados/edit/{id}', ['as' => 'admin.announcement.edit', 'uses' => 'Admin\AnnouncementController@edit']);
+          Route::put('admin/comunicados/update/{id}', ['as' => 'admin.announcement.update', 'uses' => 'Admin\AnnouncementController@update']);
+          Route::get('admin/comunicados/delete/{id}', ['as' => 'admin.announcement.delete', 'uses' => 'Admin\AnnouncementController@destroy']);
+          /* end announcement */
+
+
+              /* announcement */
+              Route::get('admin/publicacoes/index', ['as' => 'admin.publication.index', 'uses' => 'Admin\PublicationController@index']);
+              Route::get('admin/publicacoes/show/{id}', ['as' => 'admin.publication.show', 'uses' => 'Admin\PublicationController@show']);
+              Route::get('admin/publicacoes/create', ['as' => 'admin.publication.create', 'uses' => 'Admin\PublicationController@create']);
+              Route::post('admin/publicacoes/store', ['as' => 'admin.publication.store', 'uses' => 'Admin\PublicationController@store']);
+              Route::get('admin/publicacoes/edit/{id}', ['as' => 'admin.publication.edit', 'uses' => 'Admin\PublicationController@edit']);
+              Route::put('admin/publicacoes/update/{id}', ['as' => 'admin.publication.update', 'uses' => 'Admin\PublicationController@update']);
+              Route::get('admin/publicacoes/delete/{id}', ['as' => 'admin.publication.delete', 'uses' => 'Admin\PublicationController@destroy']);
+              /* end announcement */
+
+
 
         /* slideshow */
         Route::get('admin/slideshow/index', ['as' => 'admin.slideshow.index', 'uses' => 'Admin\SlideShowController@list']);

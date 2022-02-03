@@ -1,5 +1,5 @@
 @extends('layouts.merge.site')
-@section('titulo', 'PGR - Comunicados')
+@section('titulo', ' Comunicados')
 @section('content')
 
 <main id="main">
@@ -27,17 +27,21 @@
                        <b> Comunicados</b>
                             </p>
                             <ul>
-                fsdçfjisdjoghdfuighodfhgio
+
 
                             <tr>
-
+                                @foreach ($Announcests as $item )
                             <div>
 
-        <td style="width: 700px;"><a href="" target="_blank"><i class="fa fa-check"></i>sdfsfsdfsdf</a></td>
+                                <td style="width: 700px;"><a href="/storage/{{ $item->file }}" target="_blank"><i class="fa fa-check"></i>{{ $item->title }}</a></td>
+
+
+
         <td style="text-align: center !important;display: flex; flex-direction: row; justify-content: center;">
 
         </td>
         </div>
+        @endforeach
     </tr>
 
                             </ul>

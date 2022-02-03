@@ -23,7 +23,7 @@ class CreateComplaintsTable extends Migration
             $table->string('datesPeriods');
             $table->string('identificationSuspects');
             $table->longText('knowledgeFacts');
-            $table->string('amountsInvolved',255);
+            $table->string('amountsInvolved',255)->nullable();
             $table->string('knowledge',255)->nullable();
 
             $table->longText('documentsEvidenc')->nullable();
