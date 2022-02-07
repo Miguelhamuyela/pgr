@@ -17,12 +17,14 @@
     <!-- ====== Banner End ====== -->
 
     <!-- ====== legislation Start ====== -->
+    <br> <br> <br> <br> <br>
     <section class="ud-blog-details">
 
         @if ($legislations)
             <div class="container">
 
                 <div class="col-md-12 mb-5">
+
                     <p class="text-dark">
 
                     <h4 class="my-3">Constituição Da República De Angola</h4>

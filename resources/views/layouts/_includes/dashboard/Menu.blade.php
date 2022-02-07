@@ -122,6 +122,51 @@
                     </li>
 
                     <li class="nav-item dropdown">
+                        <a href="#annual" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-file-text fe-16"></i>
+
+
+                            <span class="ml-3 item-text"> Relatórios Anuais</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="annual">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.annualReport.create') }}">
+                                    <span class="ml-1 item-text">Cadastrar Relatórios</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.annualReport.index') }}">
+                                    <span class="ml-1 item-text">Listar Relatórios Anuais</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#otherDocument" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-file-text fe-16"></i>
+
+
+                            <span class="ml-3 item-text">Outros Documentos</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="otherDocument">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.otherDocuments.create') }}">
+                                    <span class="ml-1 item-text">Cadastrar Outros Documentos</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.otherDocuments.index') }}">
+                                    <span class="ml-1 item-text">Listar Outros Documentos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
                         <a href="#publication" data-toggle="collapse" aria-expanded="false"
                             class="dropdown-toggle nav-link">
                             <i class="fe fe-file-text fe-16"></i>
@@ -162,6 +207,23 @@
                                 <span class="ml-3 item-text">Denúcias</span>
                             </a>
                         </li>
+                    </ul>
+
+
+
+                       {{-- acerca da prg --}}
+                       <p class="text-muted nav-heading mt-4 mb-1">
+                        <span>Para o Cidadão</span>
+                    </p>
+                    <ul class="navbar-nav flex-fill w-100 mb-2">
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="{{ route('admin.about.edit','1') }}">
+
+                                <i class="fe fe-file-text fe-16"></i>
+                                <span class="ml-3 item-text">Acerca da PGR</span>
+                            </a>
+                        </li>
+
                     </ul>
 
 

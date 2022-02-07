@@ -29,18 +29,20 @@
                             </p>
                             <ul>
 
-               anexo
 
 
                             <tr>
+@foreach ($otherDocument as $item )
+
 
                             <div>
 
-        <td style="width: 700px;"><a href="" target="_blank"><i class="fa fa-check"></i></a></td>
+        <td style="width: 700px;"><a href="/storage/{{ $item->file }}" target="_blank"><i class="fa fa-check"></i> {{ $item->title }}</a></td>
         <td style="text-align: center !important;display: flex; flex-direction: row; justify-content: center;">
 
         </td>
         </div>
+        @endforeach
     </tr>
 
                             </ul>

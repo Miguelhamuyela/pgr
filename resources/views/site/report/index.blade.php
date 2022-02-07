@@ -1,16 +1,8 @@
 @extends('layouts.merge.site')
-@section('titulo', ' Publicações')
+@section('titulo', ' Relatório Anuais')
 @section('content')
 
 <main id="main">
-
-
-
-
-
-
-
-
 
     <!-- ======= About Section ======= -->
     <div id="about" class="about-area area-padding" style="margin: 0 auto !important;">
@@ -34,18 +26,21 @@
                             </p>
                             <ul>
 
-              anexo
+
 
 
                             <tr>
+@foreach ($annualReport as  $item)
 
                             <div>
 
-        <td style="width: 700px;"><a href="" target="_blank"><i class="fa fa-check"></i></a></td>
+        <td style="width: 700px;"><a href="/storage/{{ $item->file }}" target="_blank"><i class="fa fa-check"></i>{{ $item->title }}</a></td>
         <td style="text-align: center !important;display: flex; flex-direction: row; justify-content: center;">
 
         </td>
         </div>
+
+@endforeach
     </tr>
 
                             </ul>
