@@ -62,7 +62,7 @@ $response['otherDocument']=OtherDocuments::get();
     public function show($id)
     {
         $response['OtherDocuments'] = OtherDocuments::find($id);
-        return view('admin.OtherDocuments.detalis.index', $response);
+        return view('admin.OtherDocuments.details.index', $response);
     }
 
     /**
