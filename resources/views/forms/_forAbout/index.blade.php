@@ -12,7 +12,7 @@
 
             <div class="card border-0 bg-transparent">
                 <div class="card-img-top img-fluid rounded"
-                    style='background-image:url("/storage/{{ $about->path }}");background-position:center;background-size:cover;height:200px;'>
+                    style='background-image:url("/storage/{{ $about->file }}");background-position:center;background-size:cover;height:200px;'>
                 </div>
 
             </div> <!-- .card -->

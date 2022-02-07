@@ -24,31 +24,9 @@
                             <h3 class="margin-bottom-25 text-center titulo-quem-e-quem-departamento uppertext ng-binding" style="border-bottom: 1px solid #eee;padding:20px;">
                                 Direcção Central
                             </h3>
-                            <div>
+
                                 Procurador Geral da República
-                                <div class="row" style="margin: 30px auto 30px auto;">
 
-                                    <div class="col-md-6 first" style="
-                                                                    transition: box-shadow .25s;
-                                                                    border-radius: 2px;
-                                                                    background-color: #fff;
-                                                                    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-                                                                    margin: 30px auto 30px auto;
-                                                                ">
-                                        <div class="row" style="display: flex !important;">
-                                            <div class="col-md-6" style="padding: 0!important;">
-                                                <img style="height: 200px !important;" src="" alt="">
-                                            </div>
-                                            <div class=" col-md-5">
-                                                <h4 style="font-size: 25px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 12px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
-
-                                                </h4>
-                                                <div><span style="font-weight: 700;display: block;clear: both;">Procurador Geral da República</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
 
                                 <div class="row" style="margin: 30px auto 30px auto;">
