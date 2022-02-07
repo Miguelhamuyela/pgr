@@ -69,6 +69,28 @@ Route::middleware(['auth'])->group(function () {
         Route::get('admin/legislação/delete/{id}', ['as' => 'admin.legislation.delete', 'uses' => 'Admin\LegislationController@destroy']);
         /* end legislação */
 
+ /* relatorios anuais */
+ Route::get('admin/relatorios-Anuais/index', ['as' => 'admin.annualReport.index', 'uses' => 'Admin\AnnualReportController@index']);
+ Route::get('admin/relatorios-Anuais/show/{id}', ['as' => 'admin.annualReport.show', 'uses' => 'Admin\AnnualReportController@show']);
+ Route::get('admin/relatorios-Anuais/create', ['as' => 'admin.annualReport.create', 'uses' => 'Admin\AnnualReportController@create']);
+ Route::post('admin/relatorios-Anuais/store', ['as' => 'admin.annualReport.store', 'uses' => 'Admin\AnnualReportController@store']);
+ Route::get('admin/relatorios-Anuais/edit/{id}', ['as' => 'admin.annualReport.edit', 'uses' => 'Admin\AnnualReportController@edit']);
+ Route::put('admin/relatorios-Anuais/update/{id}', ['as' => 'admin.annualReport.update', 'uses' => 'Admin\AnnualReportController@update']);
+ Route::get('admin/relatorios-Anuais/delete/{id}', ['as' => 'admin.annualReport.delete', 'uses' => 'Admin\AnnualReportController@destroy']);
+ /* end relatorios anuais*/
+
+ /* Outros documentos*/
+ Route::get('admin/outros-documentos/index', ['as' => 'admin.otherDocuments.index', 'uses' => 'Admin\OtherDocumentsController@index']);
+ Route::get('admin/outros-documentos/show/{id}', ['as' => 'admin.otherDocuments.show', 'uses' => 'Admin\OtherDocumentsController@show']);
+ Route::get('admin/outros-documentos/create', ['as' => 'admin.otherDocuments.create', 'uses' => 'Admin\OtherDocumentsController@create']);
+ Route::post('admin/outros-documentos/store', ['as' => 'admin.otherDocuments.store', 'uses' => 'Admin\OtherDocumentsController@store']);
+ Route::get('admin/outros-documentos/edit/{id}', ['as' => 'admin.otherDocuments.edit', 'uses' => 'Admin\OtherDocumentsController@edit']);
+ Route::put('admin/outros-documentos/update/{id}', ['as' => 'admin.otherDocuments.update', 'uses' => 'Admin\OtherDocumentsController@update']);
+ Route::get('admin/outros-documentos/delete/{id}', ['as' => 'admin.otherDocuments.delete', 'uses' => 'Admin\OtherDocumentsController@destroy']);
+ /* end Outros documentos*/
+
+
+
           /* announcement */
           Route::get('admin/comunicados/index', ['as' => 'admin.announcement.index', 'uses' => 'Admin\AnnouncementController@index']);
           Route::get('admin/comunicados/show/{id}', ['as' => 'admin.announcement.show', 'uses' => 'Admin\AnnouncementController@show']);
@@ -150,10 +172,9 @@ Route::middleware(['auth'])->group(function () {
         /* end senra */
 
         /* about */
-        Route::get('admin/about/show', ['as' => 'admin.about.show', 'uses' => 'Admin\AboutController@show']);
-
-        Route::get('admin/about/edit/{id}', ['as' => 'admin.about.edit', 'uses' => 'Admin\AboutController@edit']);
-        Route::put('admin/about/update/{id}', ['as' => 'admin.about.update', 'uses' => 'Admin\AboutController@update']);
+        Route::get('admin/about/show', ['as' => 'admin.about.show', 'uses' => 'Admin\AbouteController@show']);
+        Route::get('admin/about/edit/{id}', ['as' => 'admin.about.edit', 'uses' => 'Admin\AbouteController@edit']);
+        Route::put('admin/about/update/{id}', ['as' => 'admin.about.update', 'uses' => 'Admin\AbouteController@update']);
         /* end about */
 
         /* reclamation */

@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class About extends Model
+class AnnualReport extends Model
 {
     use HasFactory;
     use HasFactory, SoftDeletes;
+    protected $table = 'annal_report';
 
-    protected $table = 'aboutes';
-
-    public $fillable = ['title', 'photo', 'aboute'];
+    public $fillable = ['title', 'file'];
     /**
      * The attributes that should be mutated to dates.
      *
