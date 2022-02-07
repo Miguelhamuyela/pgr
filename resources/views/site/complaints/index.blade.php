@@ -75,8 +75,31 @@
                                         </label>
                                         <label for=''></label>
                                         <select type='combo' name='complaintData' id='campo_194' class='form-control'>
-                                            <option value='ssd' SELECTED>Seleccione</option>
-                                            <option value='ssd' >Seleccione</option>
+                                            <option  SELECTED>Seleccione</option>
+
+
+                                            <option value='Actividade Desportiva' >Actividade Desportiva</option>
+
+
+
+
+                                            <option value='Administração Local' >Administração Local</option>
+                                            <option value='Administração Provincial' >Administração Provincial</option>
+                                            <option value='Advogados - Solicitadores - Agentes de execução' >Advogados - Solicitadores - Agentes de execução</option>
+                                            <option value='Assembleia da República - Deputados e Funcionários' >Assembleia da República - Deputados e Funcionários</option>
+                                            <option value='Corrupção internacional de empresas angolanas' >Corrupção internacional de empresas angolanas</option>
+                                            <option value='Direcções - Regionais - Serviços Periféricos' >Direcções - Regionais - Serviços Periféricos</option>
+                                            <option value='Empresas privadas' >Empresas privadas</option>
+                                            <option value='Entidades de supervisão' >Entidades de supervisão</option>
+                                            <option value='Entidades do sector bancário' >Entidades do sector bancário</option>
+                                            <option value='Entidades públicas empresariais (Ex: Hospitais Públicos' >Entidades públicas empresariais (Ex: Hospitais Públicos</option>
+                                            <option value='Forças de seguranças e militares' >Forças de seguranças e militares</option>
+                                            <option value='Fundações e Associações' >Fundações e Associações</option>
+                                            <option value='Governo - Direcções - gerais - Serviços centrais' >Governo - Direcções - gerais - Serviços centrais</option>
+                                            <option value='Institutos e outro serviçoes personalizados' >Institutos e outro serviçoes personalizados</option>
+                                            <option value='Ordens profissionais e associações públicas' >Ordens profissionais e associações públicas</option>
+                                            <option value='Outros - Entidades não especificadas' >Outros - Entidades não especificadas</option>
+
                                         </select>
                                     </p>
                                     <p>
