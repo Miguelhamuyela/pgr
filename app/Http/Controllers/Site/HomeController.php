@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\AttorneyGeneral;
 use App\Models\Gallery;
 use App\Models\News;
 use App\Models\SlideShow;
@@ -18,6 +19,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $response['attorney_general']=AttorneyGeneral::get();
         $response['slideshows'] = SlideShow::orderBy('id', 'desc')->get();
         $response['news'] = News::where([['state', 'Autorizada']])->orderBy('date', 'desc')->limit(6)->get();
         $response['galleries'] = Gallery::orderBy('id', 'desc')->limit(6)->get();

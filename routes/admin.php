@@ -177,6 +177,13 @@ Route::middleware(['auth'])->group(function () {
         Route::put('admin/about/update/{id}', ['as' => 'admin.about.update', 'uses' => 'Admin\AbouteController@update']);
         /* end about */
 
+
+  /* attorney_general */
+  Route::get('admin/procurador-geral/show', ['as' => 'admin.attorney_general.show', 'uses' => 'Admin\AttorneyGeneralController@show']);
+  Route::get('admin/procurador-geral/edit/{id}', ['as' => 'admin.attorney_general.edit', 'uses' => 'Admin\AttorneyGeneralController@edit']);
+  Route::put('admin/procurador-geral/update/{id}', ['as' => 'admin.attorney_general.update', 'uses' => 'Admin\AttorneyGeneralController@update']);
+  /* end attorney_general */
+
         /* reclamation */
         Route::get('admin/reclamation/index', ['as' => 'admin.reclamation.index', 'uses' => 'Admin\ReclamationController@index']);
         Route::get('admin/reclamation/show/{id}', ['as' => 'admin.reclamation.show', 'uses' => 'Admin\ReclamationController@show']);
