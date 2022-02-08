@@ -32,10 +32,8 @@
                 <option disabled selected>selecione a categoria</option>
             @endif
 
-            <option value="Direcção Central">Direcção Central</option>
-            <option value="Órgãos Nacionais">Órgãos Nacionais</option>
-            <option value="Órgãos Regionais">Órgãos Regionais</option>
-            <option value="Orgãos Provinciais">Orgãos Provinciais</option>
+@include('extra.provinces.index')
+
         </select>
 
     </div>

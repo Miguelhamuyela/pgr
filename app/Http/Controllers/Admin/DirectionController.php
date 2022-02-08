@@ -42,21 +42,21 @@ class DirectionController extends Controller
             'organ' => 'required|min:5|max:255',
             'office' => 'required|min:5|max:255',
             'name' => 'required|min:5|max:255',
-            'photo' => 'required|mimes:jpg,png,jpeg,pdf,docx,doc',
+            'photo' => 'required|mimes:jpg,png,jpeg',
         ]);
 
 
         $middle = $request->file('photo');
         $file = $middle->storeAs('Direction', 'PGR-Direção-' . uniqid(rand(1, 5)) . "." . $middle->extension());
 
-        $legislation = Direction::create([
+        $Direction = Direction::create([
             'photo' => $file,
             'organ' => $request->organ,
             'office' => $request->office,
             'province' => $request->province,
             'name'=> $request->name,
         ]);
-        return redirect("admin/direcao/show/$legislation->id")->with('create', '1');
+        return redirect("admin/direcao/show/$Direction->id")->with('create', '1');
     }
 
     /**
@@ -104,7 +104,7 @@ class DirectionController extends Controller
 if(isset($request->photo)){
     $middle = $request->file('photo');
     $file = $middle->storeAs('Direction', 'PGR-Direção-' . uniqid(rand(1, 5)) . "." . $middle->extension());
-    $legislation = Direction::find($id)->update([
+  Direction::find($id)->update([
         'photo' => $file,
         'organ' => $request->organ,
         'office' => $request->office,
@@ -115,7 +115,7 @@ if(isset($request->photo)){
 }
 
 else{
-    $legislation = Direction::find($id)->update([
+   Direction::find($id)->update([
 
         'organ' => $request->organ,
         'office' => $request->office,
