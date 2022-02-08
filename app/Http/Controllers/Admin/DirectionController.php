@@ -68,7 +68,7 @@ class DirectionController extends Controller
     public function show($id)
     {
         $response['direction'] = Direction::find($id);
-        return view('admin.Direction.details.index', $response);
+        return view('admin.direction.details.index', $response);
     }
 
     /**
@@ -80,7 +80,7 @@ class DirectionController extends Controller
     public function edit($id)
     {
         $response['direction'] = Direction::find($id);
-        return view('admin.Direction.edit.index', $response);
+        return view('admin.direction.edit.index', $response);
     }
 
     /**
