@@ -211,9 +211,9 @@
 
 
 
-                       {{-- acerca da prg --}}
+                       {{-- PGR--}}
                        <p class="text-muted nav-heading mt-4 mb-1">
-                        <span>Para o Cidadão</span>
+                        <span>PGR</span>
                     </p>
                     <ul class="navbar-nav flex-fill w-100 mb-2">
                         <li class="nav-item w-100">
@@ -221,6 +221,14 @@
 
                                 <i class="fe fe-file-text fe-16"></i>
                                 <span class="ml-3 item-text">Acerca da PGR</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item w-100">
+                            <a class="nav-link" href="{{ route('admin.attorney_general.edit','1') }}">
+
+                                <i class="fe fe-file-text fe-16"></i>
+                                <Procurador class="ml-3 item-text">Procurador Geral</span>
                             </a>
                         </li>
 

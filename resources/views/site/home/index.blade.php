@@ -31,6 +31,9 @@
                         </div>
                     </div>
                 </div>
+                @foreach ($attorney_general as $item )
+
+
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 0 auto !important;">
                         <div class="row">
@@ -43,45 +46,16 @@
                                             style="-webkit-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);-moz-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);">
                                             <img class="img"
                                                 style="border-radius: 2px;width:50%;float: left; margin: 0px 30px 0px 0px"
-                                                src="/site/img/blog/2.jpg" alt="">
+                                                src="/storage/{{ $item->photo }}" alt="">
                                         </div>
 
                                         <p style="text-align: justify; ">
-                                            Em Democracia, as instituições públicas exercem as suas funções norteadas pela
-                                            prossecução do interesse público, pela transparência e pela prestação de contas
-                                            à
-                                            sociedade do cumprimento das suas atribuições constitucionais e legais, na
-                                            medida em
-                                            que é em nome e em prol dos cidadãos que se estruturam e organizam os poderes
-                                            públicos. <br><br>
-                                            A Procuradoria-Geral da República, o fiscal mor da legalidade democrática,
-                                            obriga-se à
-                                            criação de canais de comunicação e de interacção com os cidadãos, de modo a
-                                            permitir
-                                            o escrutínio da sua acção e a obter dos destinatários finais do seu papel social
-                                            o retorno
-                                            necessário ao aprimoramento e melhoria dos seus procedimentos. <br><br>
-                                            Nesta era digital, a inauguração do presente portal da Procuradoria-Geral da
-                                            República
-                                            visa impulsionar e dinamizar o fornecimento de informações sobre o funcionamento
-                                            desta Instituição, a sua composição em matéria de magistrados do Ministério
-                                            Público,
-                                            técnicos de justiça e outros servidores, bem como a divulgação de toda a
-                                            actividade
-                                            quotidiana com valor noticioso ou de interesse público. <br><br>
-                                            Um recurso extremamente útil e de reforço ao exercício da cidadania é o espaço
-                                            para a
-                                            apresentação de denúncias públicas, cuja confidencialidade a anonimização dos
-                                            denunciantes é garantida pelo sistema informático e por técnicos especializados
-                                            da
-                                            Procuradoria-Geral da República, permitindo ainda que o interessado faça o
-                                            acompanhamento do tratamento dado à sua denúncia por via do portal. <br><br>
-                                            Eis mais um passo no sentido da promoção do exercício da cidadania plena e na
-                                            optimização das iniciativas comunicacionais da Procuradoria-Geral da República.
+
+                                          {!! html_entity_decode( $item->description) !!}
                                             <br><br><br>
                                             Sejam todos bem-vindos!
 
-                                        <h4 class="sec-head">Hélder Fernando Pitta Gróz </h4>
+                                        <h4 class="sec-head">{{ $item->name }} </h4>
                                         <p style="margin-top:-10px;font-style: italic;">Procurador Geral da República</p>
 
 
@@ -93,6 +67,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <!-- End About Section -->
@@ -114,8 +89,8 @@
                     <div class="col-md-6 first" style="
                                                                                                         transition: box-shadow .25s;
                                                                                                         border-radius: 2px;
-                                                                                                        background-color: #fff; 
-                                                                                                        box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+                                                                                                        background-color: #fff;
+                                                                                                        box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
                                                                                                         margin: 30px auto 30px auto;
                                                                                                     ">
                         <div class="row" style="display: flex !important;">
