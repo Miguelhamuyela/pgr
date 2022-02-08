@@ -84,6 +84,10 @@
                         </div>
                     </div>
                 </div>
+                @foreach ($directions_center as  $item)
+
+
+                @if ($item->office=="Procurador Geral da República")
                 <div class="row team-row" style="margin: 30px auto 30px auto;">
 
                     <div class="col-md-6 first" style="
@@ -95,59 +99,47 @@
                                                                                                     ">
                         <div class="row" style="display: flex !important;">
                             <div class="col-md-6" style="padding: 0!important;">
-                                <img style="height: 200px !important;" src="/site/img/procuradores/3.jpg" alt="">
+                                <img style="height: 200px !important;" src="/storage/{{ $item->photo }}" alt="">
                             </div>
                             <div class=" col-md-5">
                                 <h4
                                     style="font-size: 25px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 12px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
                                     Hélder Fernando Pitta Gróz
                                 </h4>
-                                <div><span style="font-weight: 700;display: block;clear: both;">Procurador Geral da
-                                        República</span>
+                                <div><span style="font-weight: 700;display: block;clear: both;">{{ $item->office }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                @endif
+                @endforeach
                 <div class="row" style="margin: 30px auto 30px auto;">
-
-                    <div class="col-md-5 first"
-                        style="transition: box-shadow .25s;border-radius: 2px;background-color: #fff;  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); margin: 30px auto 30px auto; ">
-                        <div class="row" style="display: flex !important;">
-                            <div class="col-md-6" style="padding: 0!important;">
-                                <img style="height: 165px !important;" src="/site/img/procuradores/MotaLiz.jpeg" alt="">
-                            </div>
-                            <div class=" col-md-5">
-                                <h4
-                                    style="font-size: 20px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 3px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
-                                    Luís de Assunção Pedro da Mota Liz
-                                </h4>
-                                <div><span style="font-weight: 700;display: block;clear: both;">Vice-Procurador Geral da
-                                        República</span>
-                                </div>
-                            </div>
-                        </div>
+                @foreach ($directions_center as  $item  )
+                @if ($item->office !="Procurador Geral da República")
+                <div class="col-md-5 first"
+                style="transition: box-shadow .25s;border-radius: 2px;background-color: #fff;  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); margin: 30px auto 30px auto; ">
+                <div class="row" style="display: flex !important;">
+                    <div class="col-md-6" style="padding: 0!important;">
+                        <img style="height: 165px !important;" src="/storage/{{ $item->photo }}" alt="">
                     </div>
-
-                    <div class="col-md-5 first"
-                        style="transition: box-shadow .25s; border-radius: 2px;  background-color: #fff; box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);  margin: 30px auto 30px auto; ">
-                        <div class="row" style="display: flex !important;">
-                            <div class="col-md-6" style="padding: 0!important;">
-                                <img style="height: 165px !important;" src="/site/img/procuradores/Filomeno1.jpg" alt="">
-                            </div>
-                            <div class=" col-md-5">
-                                <h4
-                                    style="font-size: 20px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 3px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
-                                    Filomeno Octávio da Conceição
-                                </h4>
-                                <div><span style="font-weight: 700;display: block;clear: both;">Vice-Procurador
-                                        Militar</span>
-                                </div>
-                            </div>
+                    <div class=" col-md-5">
+                        <h4
+                            style="font-size: 20px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 3px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
+                            Luís de Assunção Pedro da Mota Liz
+                        </h4>
+                        <div><span style="font-weight: 700;display: block;clear: both;">{{ $item->office }}</span>
                         </div>
                     </div>
                 </div>
+                </div>
+                @endif
+
+                @endforeach
+
+                </div>
+                        </div>
 
                 <div class="row"
                     style="margin-top: 60px !important; margin-bottom: -30px; display: flex !important;justify-content:center !important;">

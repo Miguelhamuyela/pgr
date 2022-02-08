@@ -90,6 +90,18 @@ Route::middleware(['auth'])->group(function () {
  /* end Outros documentos*/
 
 
+     /* direção */
+     Route::get('admin/direcao/index', ['as' => 'admin.direction.index', 'uses' => 'Admin\DirectionController@index']);
+     Route::get('admin/direcao/show/{id}', ['as' => 'admin.direction.show', 'uses' => 'Admin\DirectionController@show']);
+     Route::get('admin/direcao/create', ['as' => 'admin.direction.create', 'uses' => 'Admin\DirectionController@create']);
+     Route::post('admin/direcao/store', ['as' => 'admin.direction.store', 'uses' => 'Admin\DirectionController@store']);
+
+     Route::get('admin/direcao/edit/{id}', ['as' => 'admin.direction.edit', 'uses' => 'Admin\DirectionController@edit']);
+     Route::put('admin/direcao/update/{id}', ['as' => 'admin.direction.update', 'uses' => 'Admin\DirectionController@update']);
+
+     Route::get('admin/direcao/delete/{id}', ['as' => 'admin.direction.delete', 'uses' => 'Admin\DirectionController@destroy']);
+     /* end direção */
+
 
           /* announcement */
           Route::get('admin/comunicados/index', ['as' => 'admin.announcement.index', 'uses' => 'Admin\AnnouncementController@index']);
