@@ -5,7 +5,7 @@
     <div class="card mb-2">
         <div class="card-body">
             <h2 class="h5 page-title">
-                Detalhes do Utilizador #{{ $user->id }}
+                Detalhes do Utilizador #{{ $user->name }}
             </h2>
         </div>
     </div>
@@ -35,7 +35,7 @@
                                     <div class="col-md-12">
                                         <h4 class="mb-1">
                                             <b>Nivel de Acesso:</b>
-                                            {{$user->level }}
+                                            {{ $user->level }}
 
                                         </h4>
                                     </div>
@@ -59,5 +59,44 @@
     </div>
 
 
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table datatables table-hover table-bordered" id="dataTable-1">
+                <thead class="thead-dark">
+                    <tr class="text-center">
+                        <th>ID</th>
+                        <th>NIVEL</th>
+                        <th>CAMINHO</th>
+                        <th>IP</th>
+                        <th>DISPOSITIVO</th>
+                        <th>ACÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+
+                    @foreach ($logs as $item)
+                        <tr class="text-center text-dark">
+                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->level }} </td>
+                            <td>{{ $item->PATH_INFO }} </td>
+                            <td>{{ $item->REMOTE_ADDR }} </td>
+                            <td>{{ $item->HTTP_USER_AGENT }} </td>
+
+
+                            <td>
+                                <button type="button" class="btn btn-dark" data-toggle="modal"
+                                    data-target="#logs{{ $item->id }}">
+                                    VER
+                                </button>
+                            </td>
+                        </tr>
+
+                        @include('extra.modals.logs.index')
+                    @endforeach
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 @endsection

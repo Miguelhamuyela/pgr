@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Log;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,8 @@ class UserController extends Controller
             return redirect()->route('admin.home')->with('NoAuth', '1');
         }else{
 
+
+            $response['logs'] = Log::where('USER_ID', $id)->orderBy('id', 'desc')->get();
             $response['user'] = User::find($id);
             return view('admin.user.details.index', $response);
         }
