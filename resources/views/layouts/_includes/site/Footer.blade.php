@@ -71,7 +71,7 @@
      </div>
  </footer>
  <!-- End  Footer -->
-
+ {!! ReCaptcha::htmlScriptTagJsApi() !!}
  <style>
      .modal-content {
          padding: 10px 100px;

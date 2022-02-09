@@ -28,11 +28,11 @@ class AppServiceProvider extends ServiceProvider
     {
 
         Paginator::useBootstrap();
-/*
+
         $response['configuration'] = Configuration::first();
 
 
-        view()->share($response);*/
+        view()->share($response);
 
     }
 }

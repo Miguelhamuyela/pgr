@@ -15,18 +15,18 @@
             <div class="col-lg-12">
                 <form class="row" action="{{ route('site.search.find') }}">
                     @csrf
-                   
-                        <input type="text" id="rcorners2" placeholder="Digite sua pesquisa..."
-                            value="{{ isset($search) ? $search : '' }}" name="search" required class="form-control py-2">
-               
-                        <button class="btn btn-primary" id="buttonbtn" type="submit"> <i class="lni lni-search"></i></button>
-                
+
+                    <input type="text" id="rcorners2" placeholder="Digite sua pesquisa..."
+                        value="{{ isset($search) ? $search : '' }}" name="search" required class="form-control py-2">
+
+                    <button class="btn btn-primary" id="buttonbtn" type="submit"> <i class="lni lni-search"></i></button>
+
                 </form>
             </div>
 
 
             <div class="col-lg-12 mt-2">
-                @isset ($informations)
+                @isset($informations)
 
                     @if (count($informations) > 1)
                         <h5 class="mb-5">Cerca de {{ count($informations) }} resultados</h5>

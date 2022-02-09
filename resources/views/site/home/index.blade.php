@@ -10,7 +10,6 @@
                         @foreach ($slideshows as $item)
                             <img class="banner" src="/storage/{{ $item->path }}" style="max-height:40px!important"
                                 alt="" title="#slider-direction-{{ $item->id }}" />
-
                         @endforeach
 
                     </div>
@@ -31,42 +30,41 @@
                         </div>
                     </div>
                 </div>
-                @foreach ($attorney_general as $item )
+                @foreach ($attorney_general as $item)
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 0 auto !important;">
+                            <div class="row">
 
-
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 0 auto !important;">
-                        <div class="row">
-
-                            <!-- single-well end-->
-                            <div>
+                                <!-- single-well end-->
                                 <div>
-                                    <div class="text">
-                                        <div
-                                            style="-webkit-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);-moz-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);">
-                                            <img class="img"
-                                                style="border-radius: 2px;width:50%;float: left; margin: 0px 30px 0px 0px"
-                                                src="/storage/{{ $item->photo }}" alt="">
+                                    <div>
+                                        <div class="text">
+                                            <div
+                                                style="-webkit-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);-moz-box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);box-shadow: -1px 3px 8px 0px rgba(0,0,0,0.63);">
+                                                <img class="img"
+                                                    style="border-radius: 2px;width:50%;float: left; margin: 0px 30px 0px 0px"
+                                                    src="/storage/{{ $item->photo }}" alt="">
+                                            </div>
+
+                                            <p style="text-align: justify; ">
+
+                                                {!! html_entity_decode($item->description) !!}
+                                                <br><br><br>
+                                                Sejam todos bem-vindos!
+
+                                            <h4 class="sec-head">{{ $item->name }} </h4>
+                                            <p style="margin-top:-10px;font-style: italic;">Procurador Geral da República
+                                            </p>
+
+
+                                            </p>
                                         </div>
-
-                                        <p style="text-align: justify; ">
-
-                                          {!! html_entity_decode( $item->description) !!}
-                                            <br><br><br>
-                                            Sejam todos bem-vindos!
-
-                                        <h4 class="sec-head">{{ $item->name }} </h4>
-                                        <p style="margin-top:-10px;font-style: italic;">Procurador Geral da República</p>
-
-
-                                        </p>
                                     </div>
                                 </div>
+                                <!-- End col-->
                             </div>
-                            <!-- End col-->
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -84,70 +82,69 @@
                         </div>
                     </div>
                 </div>
-                @foreach ($directions_center as  $item)
+                @foreach ($directions_center as $item)
+                    @if ($item->office == 'Procurador Geral da República')
+                        <div class="row team-row" style="margin: 30px auto 30px auto;">
 
-
-                @if ($item->office=="Procurador Geral da República")
-                <div class="row team-row" style="margin: 30px auto 30px auto;">
-
-                    <div class="col-md-6 first" style="
-                                                                                                        transition: box-shadow .25s;
-                                                                                                        border-radius: 2px;
-                                                                                                        background-color: #fff;
-                                                                                                        box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-                                                                                                        margin: 30px auto 30px auto;
-                                                                                                    ">
-                        <div class="row" style="display: flex !important;">
-                            <div class="col-md-6" style="padding: 0!important;">
-                                <img style="height: 200px !important;" src="/storage/{{ $item->photo }}" alt="">
-                            </div>
-                            <div class=" col-md-5">
-                                <h4
-                                    style="font-size: 25px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 12px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
-                                    Hélder Fernando Pitta Gróz
-                                </h4>
-                                <div><span style="font-weight: 700;display: block;clear: both;">{{ $item->office }}</span>
+                            <div class="col-md-6 first" style="
+                                                                                                            transition: box-shadow .25s;
+                                                                                                            border-radius: 2px;
+                                                                                                            background-color: #fff;
+                                                                                                            box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+                                                                                                            margin: 30px auto 30px auto;
+                                                                                                        ">
+                                <div class="row" style="display: flex !important;">
+                                    <div class="col-md-6" style="padding: 0!important;">
+                                        <img style="height: 200px !important;" src="/storage/{{ $item->photo }}" alt="">
+                                    </div>
+                                    <div class=" col-md-5">
+                                        <h4
+                                            style="font-size: 25px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 12px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
+                                            Hélder Fernando Pitta Gróz
+                                        </h4>
+                                        <div><span
+                                                style="font-weight: 700;display: block;clear: both;">{{ $item->office }}</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                @endif
+                    @endif
                 @endforeach
                 <div class="row" style="margin: 30px auto 30px auto;">
-                @foreach ($directions_center as  $item  )
-                @if ($item->office !="Procurador Geral da República")
-                <div class="col-md-5 first"
-                style="transition: box-shadow .25s;border-radius: 2px;background-color: #fff;  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); margin: 30px auto 30px auto; ">
-                <div class="row" style="display: flex !important;">
-                    <div class="col-md-6" style="padding: 0!important;">
-                        <img style="height: 165px !important;" src="/storage/{{ $item->photo }}" alt="">
-                    </div>
-                    <div class=" col-md-5">
-                        <h4
-                            style="font-size: 20px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 3px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
-                            Luís de Assunção Pedro da Mota Liz
-                        </h4>
-                        <div><span style="font-weight: 700;display: block;clear: both;">{{ $item->office }}</span>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                @endif
+                    @foreach ($directions_center as $item)
+                        @if ($item->office != 'Procurador Geral da República')
+                            <div class="col-md-5 first"
+                                style="transition: box-shadow .25s;border-radius: 2px;background-color: #fff;  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); margin: 30px auto 30px auto; ">
+                                <div class="row" style="display: flex !important;">
+                                    <div class="col-md-6" style="padding: 0!important;">
+                                        <img style="height: 165px !important;" src="/storage/{{ $item->photo }}" alt="">
+                                    </div>
+                                    <div class=" col-md-5">
+                                        <h4
+                                            style="font-size: 20px !important;line-height: 110%;margin: 1.14rem 0 0.912rem;padding-bottom: 3px;border-bottom: 1px solid #800000;font-weight: 400;font-size: 18px;">
+                                            Luís de Assunção Pedro da Mota Liz
+                                        </h4>
+                                        <div><span
+                                                style="font-weight: 700;display: block;clear: both;">{{ $item->office }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
 
-                @endforeach
+                    @endforeach
 
-                </div>
-                        </div>
-
-                <div class="row"
-                    style="margin-top: 60px !important; margin-bottom: -30px; display: flex !important;justify-content:center !important;">
-                    <a href="{{ route('site.whoIsWho') }}">
-                        <h6 style="text-align: center; color: #800000;">Ver Todos ></h6>
-                    </a>
                 </div>
             </div>
+
+            <div class="row"
+                style="margin-top: 60px !important; margin-bottom: -30px; display: flex !important;justify-content:center !important;">
+                <a href="{{ route('site.whoIsWho') }}">
+                    <h6 style="text-align: center; color: #800000;">Ver Todos ></h6>
+                </a>
+            </div>
+        </div>
         </div>
         <!-- End Team Section -->
 
@@ -212,7 +209,6 @@
                                     <!-- Start single blog -->
                                 </div>
                                 <!-- End Left Blog-->
-
                             @endforeach
                         </div>
                     </div>
@@ -323,7 +319,6 @@
 
                 <div class="row awesome-project-content">
                     @foreach ($galleries as $item)
-
                         <!-- single-gallery start -->
                         <div class="col-12 col-md-4 col-lg-4 design development">
                             <div class="single-awesome-project">

@@ -251,7 +251,6 @@
 
     </style>
 
-
 </head>
 
 <body data-target="#navbar-example">
