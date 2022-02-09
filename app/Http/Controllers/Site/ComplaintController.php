@@ -23,19 +23,24 @@ class ComplaintController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|',
+            'email' => 'required|email',
             'phone'    => 'required',
             'complaintData'    => 'required',
             'actsCorruption'    => 'required',
             'datesPeriods'    => 'required',
             'identificationSuspects'    => 'required',
-            'knowledgeFacts'    => 'required', ]);
+            'knowledgeFacts'    => 'required', 
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
 
 
-        if(isset($request->attachment)){
-            $middle = $request->file('attachment');
-            $file = $middle->storeAs('attachment', 'PGR-denucias' . uniqid(rand(1, 5)) . "." . $middle->extension());
+        if($middle = $request->file('attachment')){
+            $file = $middle->storeAs('complaints', 'PGR-denucias' . uniqid(rand(1, 5)) . "." . $middle->extension());
+        }else{
+            $file = null;
+        }
 
+      
         Complaint::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -47,24 +52,10 @@ class ComplaintController extends Controller
             'complaintData' => $request->complaintData,
             'actsCorruption' => $request->actsCorruption,
             'datesPeriods' => $request->datesPeriods,
-            'identificationSuspects' => $request->identificationSuspects, ]);
-        }
-        else{
-
-            Complaint::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-
-                'documentsEvidenc' => $request->documentsEvidenc,
-                'amountsInvolved' => $request->amountsInvolved,
-                'knowledgeFacts' => $request->knowledgeFacts,
-                'complaintData' => $request->complaintData,
-                'actsCorruption' => $request->actsCorruption,
-                'datesPeriods' => $request->datesPeriods,
-                'identificationSuspects' => $request->identificationSuspects, ]);
-        }
-
+            'identificationSuspects' => $request->identificationSuspects, 
+        ]);
+        
+      
 
 
 

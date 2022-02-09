@@ -31,7 +31,8 @@ class ReclamationController extends Controller
             'email' => 'required|max:50',
             'tel' => 'required|max:20',
             'numberProtocol' => 'required',
-            'msg' => 'required|string'
+            'msg' => 'required|string',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
         Reclamation::create($request->all());
