@@ -184,9 +184,9 @@ Route::middleware(['auth'])->group(function () {
         /* end senra */
 
         /* about */
-        Route::get('admin/about/show', ['as' => 'admin.about.show', 'uses' => 'Admin\AbouteController@show']);
-        Route::get('admin/about/edit/{id}', ['as' => 'admin.about.edit', 'uses' => 'Admin\AbouteController@edit']);
-        Route::put('admin/about/update/{id}', ['as' => 'admin.about.update', 'uses' => 'Admin\AbouteController@update']);
+        Route::get('admin/about/show', ['as' => 'admin.about.show', 'uses' => 'Admin\AboutController@show']);
+        Route::get('admin/about/edit/{id}', ['as' => 'admin.about.edit', 'uses' => 'Admin\AboutController@edit']);
+        Route::put('admin/about/update/{id}', ['as' => 'admin.about.update', 'uses' => 'Admin\AboutController@update']);
         /* end about */
 
 

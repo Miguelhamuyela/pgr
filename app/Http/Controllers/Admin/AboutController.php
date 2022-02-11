@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use Illuminate\Http\Request;
 
-class AbouteController extends Controller
+class AboutController extends Controller
 {
 
     private $Logger;
@@ -53,5 +53,6 @@ $About =  About::find($id)->update([
       $this->Logger->log('info', 'Editou  Notícia  com o identificador ' . $id);
 return redirect("admin/about/edit/$id")->with('edit', '1');
     }
+
 
 }

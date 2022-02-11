@@ -38,7 +38,6 @@ class SlideShowController extends Controller
      */
     public function create()
     {
-        //
           //Logger
           $this->Logger->log('info', 'Cadastrou uma Imagem do Slideshow ');
         return view('admin.slideshow.create.index');
