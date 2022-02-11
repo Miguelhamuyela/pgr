@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\AttorneyGeneral;
 use Illuminate\Http\Request;
@@ -9,9 +10,19 @@ use Illuminate\Http\Request;
 class AttorneyGeneralController extends Controller
 {
 
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
+
+
     public function edit($id)
     {
         $response['attorneyGeneral'] =AttorneyGeneral::find($id);
+           //Logger
+           $this->Logger->log('info', 'Entrou em editar o Procurador Geral com o identificador ' . $id);
     return view('admin.attorney_general.edit.index',$response);
     }
 
@@ -52,6 +63,9 @@ else{
     ]);
 
 }
+
+  //Logger
+  $this->Logger->log('info', 'Editou em editar o Procurador Geral com o identificador ' . $id);
 return redirect("admin/procurador-geral/edit/$id")->with('edit', '1');
     }  //
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Log;
 use App\Models\User;
@@ -13,6 +14,13 @@ use Illuminate\Validation\Rules;
 
 class UserController extends Controller
 {
+  
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
 
     /**
      * Display a listing of the resource.
@@ -23,6 +31,8 @@ class UserController extends Controller
     {
         //
         $response['users'] = User::get();
+         //Logger
+         $this->Logger->log('info', 'Listou um Utilizador ');
         return view('admin.user.list.index', $response);
     }
 
@@ -43,6 +53,8 @@ class UserController extends Controller
 
             $response['logs'] = Log::where('USER_ID', $id)->orderBy('id', 'desc')->get();
             $response['user'] = User::find($id);
+             //Logger
+             $this->Logger->log('info', 'Visualizou  Detalhe de um Utilizador com o identificador ' . $id);
             return view('admin.user.details.index', $response);
         }
 
@@ -61,6 +73,8 @@ class UserController extends Controller
         }else{
 
             $response['user'] = User::find($id);
+             //Logger
+             $this->Logger->log('info', 'Entrou em editar Detalhe de um Utilizador com o identificador' . $id);
             return view('admin.user.edit.index', $response);
         }
     }
@@ -90,7 +104,8 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-
+              //Logger
+              $this->Logger->log('info', 'Editou Detalhe de um Utilizador com o identificador ' . $id);
             return redirect()->route('admin.home')->with('edit', '1');
         }
     }
@@ -106,11 +121,15 @@ class UserController extends Controller
         //
         $count = User::count();
 
+         //Logger
+         $this->Logger->log('info', 'Eliminou um Utilizador com o identificador ' . $id);
+
         if ($count > 1) {
             User::find($id)->delete();
             return redirect()->back()->with('destroy', '1');
         } else {
             return redirect()->back();
         }
+
     }
 }

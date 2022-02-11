@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Senra;
 use Illuminate\Http\Request;
 
 class SenraController extends Controller
 {
+    
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
     /**
      * Display the specified resource.
      *
@@ -18,6 +26,8 @@ class SenraController extends Controller
     {
         //
         $response['senra'] = Senra::first();
+         //Logger
+         $this->Logger->log('info', 'Visualizou uma senra com o Identificador');
         return view('admin.fightCorruption.senra.details.index', $response);
     }
 
@@ -31,6 +41,8 @@ class SenraController extends Controller
     {
         //
         $response['senra'] = Senra::find($id);
+         //Logger
+         $this->Logger->log('info', 'Entrou em editar uma senra com o identificador' . $id);
         return view('admin.fightCorruption.senra.edit.index', $response);
     }
 
@@ -51,7 +63,8 @@ class SenraController extends Controller
 
         Senra::find($id)->update($request->all());
 
-
+        //Logger
+         $this->Logger->log('info', 'Editou uma sanra com o identificador ' . $id);
         return redirect()->route('admin.senra.show')->with('edit', '1');
     }
 }

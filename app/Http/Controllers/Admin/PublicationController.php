@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 
 class PublicationController extends Controller
 {
+
+
+    
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +26,8 @@ class PublicationController extends Controller
     public function index()
     {
         $response['Publications']= Publication::get();
+          //Logger
+          $this->Logger->log('info', 'Listou as Publicações');
         return view('admin.publication.list.index',$response);
     }
 
@@ -26,6 +38,8 @@ class PublicationController extends Controller
      */
     public function create()
     {
+          //Logger
+          $this->Logger->log('info', 'Cadastrou as Publicações com o Identificador');
      return view('admin.publication.create.index');
     }
 
@@ -50,6 +64,8 @@ class PublicationController extends Controller
 
        ]);
 
+        //Logger
+        $this->Logger->log('info', 'Cadastrou as Publicações com o Identificador');
         return redirect("admin/publicacoes/show/$Annoucent->id")->with('create', '1');
     }
 
@@ -62,6 +78,8 @@ class PublicationController extends Controller
     public function show($id)
     {
         $response['Publication'] = Publication::find($id);
+          //Logger
+          $this->Logger->log('info', 'Visualizou uma Publicação com o identificador ' . $id);
         return view('admin.publication.detalis.index', $response);
     }
 
@@ -74,6 +92,8 @@ class PublicationController extends Controller
     public function edit($id)
     {
         $response['Publication'] = Publication::find($id);
+          //Logger
+          $this->Logger->log('info', 'Entrou em editar uma Publicação com o identificador' . $id);
         return view('admin.publication.edit.index', $response);
     }
 
@@ -102,6 +122,8 @@ class PublicationController extends Controller
             'file' => $file,
             'title' => $request->title,
         ]);
+          //Logger
+          $this->Logger->log('info', 'Editou Outras Publicações com o identificador ' . $id);
         return redirect("admin/publicacoes/show/$id")->with('edit', '1');
     }
 
@@ -114,6 +136,8 @@ class PublicationController extends Controller
     public function destroy($id)
     {
         Publication::find($id)->delete();
+          //Logger
+          $this->Logger->log('info', 'Eliminou uma  Publicação com o identificador ' . $id);
         return redirect()->back()->with('destroy', '1');
     }
 }

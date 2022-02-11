@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\SlideShow;
 use Illuminate\Http\Request;
 
 class SlideShowController extends Controller
 {
+
+    
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +26,8 @@ class SlideShowController extends Controller
     {
         //
         $response['slideshows'] = SlideShow::get();
+          //Logger
+          $this->Logger->log('info', 'Listou uma Imagem do Slideshow ');
         return view('admin.slideshow.list.index', $response);
     }
 
@@ -28,6 +39,8 @@ class SlideShowController extends Controller
     public function create()
     {
         //
+          //Logger
+          $this->Logger->log('info', 'Cadastrou uma Imagem do Slideshow ');
         return view('admin.slideshow.create.index');
     }
 
@@ -53,6 +66,8 @@ class SlideShowController extends Controller
             'button' => $request->button,
             'link' => $request->link
         ]);
+           //Logger
+           $this->Logger->log('info', 'Cadastrou uma Imagem do Slideshow com o Identificador' );
         return redirect("admin/slideshow/show/$slide->id")->with('create', '1');
     }
 
@@ -66,6 +81,8 @@ class SlideShowController extends Controller
     {
         //
         $response['slideshow'] = SlideShow::find($id);
+         //Logger
+         $this->Logger->log('info', 'Visualizou uma Imagem do Slideshow com o identificador ' . $id);
         return view('admin.slideshow.details.index', $response);
     }
 
@@ -79,6 +96,8 @@ class SlideShowController extends Controller
     {
 
         $response['slideshow'] = SlideShow::find($id);
+          //Logger
+          $this->Logger->log('info', 'Entrou em editar uma Imagem do Slideshow com o identificador' . $id);
         return view('admin.slideshow.edit.index', $response);
     }
 
@@ -110,7 +129,8 @@ class SlideShowController extends Controller
             'button' => $request->button,
             'link' => $request->link
         ]);
-
+            //Logger
+             $this->Logger->log('info', 'Editou uma Imagem do Slideshow com o identificador ' . $id);
         return redirect("admin/slideshow/show/$id")->with('edit', '1');
     }
 
@@ -122,6 +142,8 @@ class SlideShowController extends Controller
      */
     public function destroy($id)
     {
+         //Logger
+         $this->Logger->log('info', 'Eliminouuma Imagem do Slideshow com o identificador ' . $id);
         SlideShow::find($id)->delete();
         return redirect()->back()->with('destroy', '1');
     }

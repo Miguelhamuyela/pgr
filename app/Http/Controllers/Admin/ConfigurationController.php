@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Configuration;
 use Illuminate\Http\Request;
@@ -9,7 +10,12 @@ use Illuminate\Http\Request;
 class ConfigurationController extends Controller
 {
 
+    private $Logger;
 
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
     /**
      * Display the specified resource.
      *
@@ -20,6 +26,8 @@ class ConfigurationController extends Controller
     {
         //
         $response['configuration'] = Configuration::first();
+          //Logger
+          $this->Logger->log('info', 'Visualizou uma Configuração com o identificador ');
         return view('admin.configuration.details.index', $response);
     }
 
@@ -33,6 +41,8 @@ class ConfigurationController extends Controller
     {
         //
         $response['configuration'] = Configuration::find($id);
+          //Logger
+          $this->Logger->log('info', 'Entrou em editar uma Configuração  com o identificador ' . $id);
         return view('admin.configuration.edit.index', $response);
     }
 
@@ -65,7 +75,8 @@ class ConfigurationController extends Controller
             'adress' => $request->adress,
         ]);
 
-
+            //Logger
+            $this->Logger->log('info', 'Editou uma  Configuração  com o identificador ' . $id);
         return redirect()->route('admin.configuration.show')->with('edit', '1');
     }
 }

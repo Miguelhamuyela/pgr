@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Dnpcc;
 use Illuminate\Http\Request;
 
 class DnpccController extends Controller
 {
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
     /**
      * Display the specified resource.
      *
@@ -18,6 +25,8 @@ class DnpccController extends Controller
     {
         //
         $response['dnpcc'] = Dnpcc::first();
+          //Logger
+          $this->Logger->log('info', 'Visualizou um Dnpcc com o identificador ');
         return view('admin.fightCorruption.dnpcc.details.index', $response);
     }
 
@@ -31,6 +40,7 @@ class DnpccController extends Controller
     {
         //
         $response['dnpcc'] = Dnpcc::find($id);
+        $this->Logger->log('info', 'Entrou em editar um Dnpcc com o identificador ' . $id);
         return view('admin.fightCorruption.dnpcc.edit.index', $response);
     }
 
@@ -50,8 +60,8 @@ class DnpccController extends Controller
         ]);
 
         Dnpcc::find($id)->update($request->all());
-
-
+         //Logger
+        $this->Logger->log('info', 'Editou um Dnpcc com o identificador ' . $id);
         return redirect()->route('admin.dnpcc.show')->with('edit', '1');
     }
 }

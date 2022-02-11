@@ -2,22 +2,31 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Dniap;
 use Illuminate\Http\Request;
 
 class DniapController extends Controller
 {
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
     /**
      * Display the specified resource.
      *
-
+     * 
      * @return \Illuminate\Http\Response
      */
     public function show()
     {
         //
         $response['dniap'] = Dniap::first();
+           //Logger
+           $this->Logger->log('info', 'Visualizou um Dniap com o identificador ');
         return view('admin.fightCorruption.dniap.details.index', $response);
     }
 
@@ -31,6 +40,8 @@ class DniapController extends Controller
     {
         //
         $response['dniap'] = Dniap::find($id);
+         //Logger
+         $this->Logger->log('info', 'Entrou em editar um Dniap com o identificador ' . $id);
         return view('admin.fightCorruption.dniap.edit.index', $response);
     }
 
@@ -51,7 +62,8 @@ class DniapController extends Controller
 
         Dniap::find($id)->update($request->all());
 
-
+         //Logger
+         $this->Logger->log('info', 'Editou um Dniap com o identificador ' . $id);
         return redirect()->route('admin.dniap.show')->with('edit', '1');
     }
 }

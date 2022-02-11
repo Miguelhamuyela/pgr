@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use App\Models\ImageGallery;
@@ -9,6 +10,12 @@ use Illuminate\Http\Request;
 
 class ImageGalleryController extends Controller
 {
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
 
 
     /**
@@ -20,6 +27,7 @@ class ImageGalleryController extends Controller
     {
         //
         $response['gallery'] = Gallery::with(['images'])->find($id);
+         $this->Logger->log('info', 'Listou uma  Imagem  da Galeria');
         return view('admin.imageGallery.create.index', $response);
     }
 
@@ -41,6 +49,9 @@ class ImageGalleryController extends Controller
                 'fk_idGallery' => $id
             ]);
         }
+
+         //Logger
+         $this->Logger->log('info', 'Visualizou uma Imagem da Galeria com o identificador ' . $id);
         return redirect("admin/gallery/show/$id")->with('create_image', '1');
     }
 
@@ -54,6 +65,8 @@ class ImageGalleryController extends Controller
     public function destroy($id)
     {
         //
+         //Logger
+         $this->Logger->log('info', 'Eliminou uma Imagem da Galeria com o identificador ' . $id);
         ImageGallery::find($id)->delete();
         return redirect()->back()->with('destroy', '1');
     }

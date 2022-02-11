@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Legislation;
 use Illuminate\Http\Request;
 
 class LegislationController extends Controller
 {
+
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +26,8 @@ class LegislationController extends Controller
 
     {
         $response['legislations'] = Legislation::get();
+           //Logger
+        $this->Logger->log('info', 'Listou a Legislação');
         return view('admin.legislation.list.index', $response);
     }
 
@@ -27,6 +38,7 @@ class LegislationController extends Controller
      */
     public function create()
     {
+        $this->Logger->log('info', 'Cadastrar Legislação');
         return view('admin.legislation.create.index');
     }
 
@@ -54,6 +66,9 @@ class LegislationController extends Controller
             'title' => $request->title,
             'legislation' => $request->legislation
         ]);
+
+           //Logger
+           $this->Logger->log('info', 'Cadastrou uma Legislação com o identificador ');
         return redirect("admin/legislação/show/$legislation->id")->with('create', '1');
     }
 
@@ -66,6 +81,8 @@ class LegislationController extends Controller
     public function show($id)
     {
         $response['legislation'] = Legislation::find($id);
+         //Logger
+         $this->Logger->log('info', 'Visualizou uma Legislação com o identificador ' . $id);
         return view('admin.legislation.details.index', $response);
     }
 
@@ -78,6 +95,9 @@ class LegislationController extends Controller
     public function edit($id)
     {
         $response['legislation'] = Legislation::find($id);
+         //Logger
+         $this->Logger->log('info', 'Entrou em editar uma Legislação com o identificador ' . $id);
+
         return view('admin.legislation.edit.index', $response);
     }
 
@@ -107,6 +127,8 @@ class LegislationController extends Controller
             'title' => $request->title,
             'legislation' => $request->legislation
         ]);
+          //Logger
+          $this->Logger->log('info', 'Editou uma Legislação com o identificador ' . $id);
         return redirect("admin/legislação/show/$id")->with('edit', '1');
     }
 
@@ -118,6 +140,8 @@ class LegislationController extends Controller
      */
     public function destroy($id)
     {
+         //Logger
+         $this->Logger->log('info', 'Eliminou uma Legislação com o identificador ' . $id);
         Legislation::find($id)->delete();
         return redirect()->back()->with('destroy', '1');
     }

@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +25,8 @@ class NewsController extends Controller
     {
         //
         $response['news'] = News::get();
+          //Logger
+          $this->Logger->log('info', 'Listou as Notícias');
         return view('admin.news.list.index', $response);
     }
 
@@ -28,6 +38,7 @@ class NewsController extends Controller
     public function create()
     {
         //
+        $this->Logger->log('info', 'Cadastrar Notícia');
         return view('admin.news.create.index');
     }
 
@@ -57,6 +68,8 @@ class NewsController extends Controller
             'state' => 'Autorizada'
         ]);
 
+        //Logger
+         $this->Logger->log('info', 'Cadastrou uma Notícia com o Identificador' );
         return redirect("admin/news/show/$news->id")->with('create', '1');
     }
 
@@ -70,6 +83,8 @@ class NewsController extends Controller
     {
         //
         $response['news'] = News::find($id);
+           //Logger
+           $this->Logger->log('info', 'Visualizou uma Notícia com o identificador ' . $id);
         return view('admin.news.details.index', $response);
     }
 
@@ -83,6 +98,9 @@ class NewsController extends Controller
     {
         //
         $response['news'] = News::find($id);
+          //Logger
+          $this->Logger->log('info', 'Entrou em editar uma Notícia com o identificador ' . $id);
+
         return view('admin.news.edit.index', $response);
     }
 
@@ -116,7 +134,8 @@ class NewsController extends Controller
             'date' => $request->date,
             'state' => 'Autorizada'
         ]);
-
+           //Logger
+            $this->Logger->log('info', 'Editou uma Notícia com o identificador ' . $id);
         return redirect("admin/news/show/$id")->with('edit', '1');
     }
 
@@ -129,6 +148,8 @@ class NewsController extends Controller
     public function destroy($id)
     {
         //
+         //Logger
+         $this->Logger->log('info', 'Eliminou uma Notícia com o identificador ' . $id);
         News::find($id)->delete();
         return redirect()->back()->with('destroy', '1');
     }

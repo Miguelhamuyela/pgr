@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\AnnualReport;
 use Illuminate\Http\Request;
 
 class AnnualReportController extends Controller
 {
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +24,11 @@ class AnnualReportController extends Controller
     public function index()
     {
         $response['annualReports']=AnnualReport::get();
+
+          //Logger
+          $this->Logger->log('info', 'Listou um   Relatório AnuaL');
         return view('admin.AnnualReport.list.index',$response);
+
     }
 
     /**
@@ -26,6 +38,8 @@ class AnnualReportController extends Controller
      */
     public function create()
     {
+          //Logger
+          $this->Logger->log('info', 'Listou um Relatório');
         return view('admin.AnnualReport.create.index');
     }
 
@@ -62,6 +76,9 @@ class AnnualReportController extends Controller
     public function show($id)
     {
         $response['annualReport'] = AnnualReport::find($id);
+          //Logger
+          $this->Logger->log('info', 'Visualizou um Relatório com o identificador ' . $id);
+
         return view('admin.AnnualReport.detalis.index', $response);
     }
 
@@ -74,6 +91,8 @@ class AnnualReportController extends Controller
     public function edit($id)
     {
         $response['AnnualReport'] = AnnualReport::find($id);
+          //Logger
+          $this->Logger->log('info', 'Entrou em editar um Relatório  com o identificador ' . $id);
         return view('admin.AnnualReport.edit.index', $response);
     }
 
@@ -102,6 +121,9 @@ class AnnualReportController extends Controller
             'file' => $file,
             'title' => $request->title,
         ]);
+
+         //Logger
+         $this->Logger->log('info', 'Editou um Relatório  com o identificador ' . $id);
         return redirect("admin/relatorios-Anuais/show/$id")->with('edit', '1');
     }
 
@@ -113,6 +135,8 @@ class AnnualReportController extends Controller
      */
     public function destroy($id)
     {
+         //Logger
+         $this->Logger->log('info', 'Eliminou um Relatório com o identificador ' . $id);
         AnnualReport::find($id)->delete();
         return redirect()->back()->with('destroy', '1');
     }

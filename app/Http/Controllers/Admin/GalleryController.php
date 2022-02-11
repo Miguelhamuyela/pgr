@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
@@ -9,6 +10,12 @@ use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
 
     /**
      * Display a listing of the resource.
@@ -18,6 +25,8 @@ class GalleryController extends Controller
     public function list()
     {
         $response['galleries'] = Gallery::orderBy('id', 'desc')->get();
+          //Logger
+          $this->Logger->log('info', 'Listou uma Galeria');
         return view('admin.gallery.list.index', $response);
     }
 
@@ -28,6 +37,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
+        $this->Logger->log('info', 'Listou uma Galeria');
         return view('admin.gallery.create.index');
     }
 
@@ -51,6 +61,8 @@ class GalleryController extends Controller
             'cover' => $file,
             'name' => $request->name
         ]);
+          //Logger
+          $this->Logger->log('info', 'Cadastrou uma Galeria com o Identificador' );
         return redirect("admin/gallery/show/$gallery->id")->with('create', '1');
     }
 
@@ -64,6 +76,8 @@ class GalleryController extends Controller
     {
         //
         $response['gallery'] = Gallery::find($id);
+          //Logger
+          $this->Logger->log('info', 'Visualizou uma Galeria com o identificador ' . $id);
         return view('admin.gallery.details.index', $response);
     }
 
@@ -77,6 +91,9 @@ class GalleryController extends Controller
     {
         //
         $response['gallery'] = Gallery::find($id);
+          //Logger
+          $this->Logger->log('info', 'Entrou em editar uma Galeria com o identificador ' . $id);
+
         return view('admin.gallery.edit.index', $response);
     }
 
@@ -104,7 +121,8 @@ class GalleryController extends Controller
             'cover' => $file,
             'name' => $request->name
         ]);
-
+            //Logger
+             $this->Logger->log('info', 'Editou uma Galeria com o identificador ' . $id);
         return redirect("admin/gallery/show/$id")->with('edit', '1');
     }
 
@@ -116,7 +134,9 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+           //Logger
+           $this->Logger->log('info', 'Eliminou uma Galeria com o identificador ' . $id);
         Gallery::find($id)->delete();
         return redirect()->back()->with('destroy', '1');
     }

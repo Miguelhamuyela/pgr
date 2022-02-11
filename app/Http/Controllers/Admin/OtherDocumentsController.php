@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\OtherDocuments;
 use Illuminate\Http\Request;
 
 class OtherDocumentsController extends Controller
 {
+
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +25,8 @@ class OtherDocumentsController extends Controller
     public function index()
     {
 $response['otherDocument']=OtherDocuments::get();
+          //Logger
+          $this->Logger->log('info', 'Listou  Outros Documentos');
         return view('admin.otherDocuments.list.index',$response);
     }
 
@@ -26,6 +37,7 @@ $response['otherDocument']=OtherDocuments::get();
      */
     public function create()
     {
+        $this->Logger->log('info', 'Cadastrar Outros Documentos');
     return view('admin.otherDocuments.create.index');
     }
 
@@ -49,7 +61,8 @@ $response['otherDocument']=OtherDocuments::get();
             'title' => $request->title,
 
        ]);
-
+           //Logger
+         $this->Logger->log('info', 'Cadastrou Outros Documentos com o Identificador' );
         return redirect("admin/outros-documentos/show/$OtherDocuments->id")->with('create', '1');
     }
 
@@ -62,6 +75,7 @@ $response['otherDocument']=OtherDocuments::get();
     public function show($id)
     {
         $response['OtherDocuments'] = OtherDocuments::find($id);
+        $this->Logger->log('info', 'Visualizou Outros Documentos com o identificador ' . $id);
         return view('admin.otherDocuments.details.index', $response);
     }
 
@@ -74,6 +88,8 @@ $response['otherDocument']=OtherDocuments::get();
     public function edit($id)
     {
         $response['OtherDocuments'] = OtherDocuments::find($id);
+         //Logger
+         $this->Logger->log('info', 'Entrou em editar Outros Documentos com o identificador ' . $id);
         return view('admin.otherDocuments.edit.index', $response);
     }
 
@@ -102,6 +118,8 @@ $response['otherDocument']=OtherDocuments::get();
             'file' => $file,
             'title' => $request->title,
         ]);
+          //Logger
+          $this->Logger->log('info', 'Editou Outros Documentos com o identificador ' . $id);
         return redirect("admin/outros-documentos/show/$id")->with('edit', '1');
     }
 
@@ -113,6 +131,8 @@ $response['otherDocument']=OtherDocuments::get();
      */
     public function destroy($id)
     {
+         //Logger
+         $this->Logger->log('info', 'Eliminou Outros Documentos com o identificador ' . $id);
         OtherDocuments::find($id)->delete();
         return redirect()->back()->with('destroy', '1');
     }

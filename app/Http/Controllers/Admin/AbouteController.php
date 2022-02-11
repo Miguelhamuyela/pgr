@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\Logger;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use Illuminate\Http\Request;
@@ -9,11 +10,19 @@ use Illuminate\Http\Request;
 class AbouteController extends Controller
 {
 
+    private $Logger;
+
+    public function __construct()
+    {
+        $this->Logger = new Logger;
+    }
 
 
     public function edit($id)
     {
         $response['about'] = About::find($id);
+          //Logger
+          $this->Logger->log('info', 'Entrou em editar Notícia com o identificador' . $id);
     return view('admin.about.edit.index',$response);
     }
 
@@ -39,6 +48,9 @@ $About =  About::find($id)->update([
     'title' => $request->title,
     'aboute' => $request->aboute,
 ]);
+
+      //Logger
+      $this->Logger->log('info', 'Editou  Notícia  com o identificador ' . $id);
 return redirect("admin/about/edit/$id")->with('edit', '1');
     }
 
